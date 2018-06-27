@@ -1,6 +1,12 @@
 package com.bachelorthesis.mountains.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
 public class UserDto extends NewUserDto {
     private String id;
     private int points;

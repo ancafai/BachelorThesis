@@ -4,7 +4,6 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.List;
@@ -20,7 +19,6 @@ public class Mountain implements Serializable {
     private String id;
 
     @Size(max=100)
-    @NotBlank
     private String name;
 
     private List<Story> stories;
