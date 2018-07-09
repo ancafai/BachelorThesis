@@ -11,6 +11,7 @@ public class UserDto extends NewUserDto {
     private String id;
     private int points;
     private byte[] profilePicture;
+    private String mapType;
 
     public UserDto(String id,
                      String username,
@@ -19,20 +20,15 @@ public class UserDto extends NewUserDto {
                      String firstname,
                      String lastname,
                      int points,
-                     byte[] profilepicture) {
+                     byte[] profilepicture,
+                    String mapType) {
         super(firstname, lastname, mail, username, password);
         this.id = id;
         this.points = points;
         this.profilePicture = profilepicture;
+        this.mapType = mapType;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public int getPoints() { return points; }
-
-    public byte[] getProfilePicture() { return profilePicture; }
 
 
     @Override
@@ -41,6 +37,7 @@ public class UserDto extends NewUserDto {
                 "id='" + id + '\'' +
                 ", points='" + points + '\'' +
                 ", profilePicture='" + profilePicture + '\'' +
+                ", mapType='" + mapType + '\'' +
                 '}';
     }
 }

@@ -39,6 +39,8 @@ public class User implements Serializable {
 
     private byte[] profilePicture;
 
+    private String mapType;
+
 
 
 }

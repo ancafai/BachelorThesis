@@ -12,6 +12,8 @@ public class NewMountainMapper extends AbstractMapper<Mountain, NewMountainDto> 
     public Mountain toInternal(NewMountainDto dto) {
         Mountain mountain = Mountain.builder()
                 .name(dto.getName())
+                .coordinates(dto.getCoordinates())
+                .stories(dto.getStories())
                 .build();
         return mountain;
     }
@@ -20,6 +22,8 @@ public class NewMountainMapper extends AbstractMapper<Mountain, NewMountainDto> 
     public NewMountainDto toExternal(Mountain model) {
         NewMountainDto newMountainDto = NewMountainDto.builder()
                 .name(model.getName())
+                .coordinates(model.getCoordinates())
+                .stories(model.getStories())
                 .build();
         return newMountainDto;
     }

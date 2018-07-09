@@ -1,0 +1,16 @@
+<div>
+  <h1>Mountains List</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Coordinates</th>
+      <th>Stories</th>
+    </tr>
+
+    <tr *ngFor="let mountain of mountains">
+      <td>{{ mountain.name }}</td>
+      <td>{{ mountain.coordinates }}</td>
+      <td>{{ mountain.stories }}</td>
+    </tr>
+  </table>
+</div>

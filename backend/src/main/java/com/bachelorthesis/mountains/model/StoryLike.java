@@ -3,7 +3,6 @@ package com.bachelorthesis.mountains.model;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -12,7 +11,7 @@ import java.util.Date;
 @Builder
 public class StoryLike implements Serializable {
 
-    private User userLike;
-    private Date timeOfLike;
+    private String userId;
+ //   private Date timeOfLike;
 
 }

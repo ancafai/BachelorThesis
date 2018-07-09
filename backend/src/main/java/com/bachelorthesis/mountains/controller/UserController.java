@@ -5,12 +5,20 @@ import com.bachelorthesis.mountains.dto.NewUserDto;
 import com.bachelorthesis.mountains.dto.UserDto;
 import com.bachelorthesis.mountains.dto.UserDtoList;
 import com.bachelorthesis.mountains.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
 @RequestMapping("/user")
 @RestController
+@CrossOrigin("*")
 public class UserController {
+
+    public static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
 
     @Autowired
     private UserService userService;
@@ -46,6 +54,10 @@ public class UserController {
         return userService.update(userDto);
     }
 
-
+    @RequestMapping("login")
+    public Principal user(Principal principal) {
+        logger.info("user logged "+principal);
+        return principal;
+    }
 
 }

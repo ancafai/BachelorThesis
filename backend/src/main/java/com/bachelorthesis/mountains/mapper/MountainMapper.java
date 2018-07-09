@@ -13,6 +13,7 @@ public class MountainMapper extends AbstractMapper<Mountain, MountainDto> {
         Mountain mountain = Mountain.builder()
                 .id(dto.getId())
                 .name(dto.getId())
+                .coordinates(dto.getCoordinates())
                 .stories(dto.getStories())
                 .build();
         mountain.setId(dto.getId());
@@ -25,6 +26,7 @@ public class MountainMapper extends AbstractMapper<Mountain, MountainDto> {
         MountainDto mountainDto = new MountainDto(
                 model.getId(),
                 model.getName(),
+                model.getCoordinates(),
                 model.getStories());
         return mountainDto;
     }

@@ -3,7 +3,6 @@ package com.bachelorthesis.mountains.model;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
@@ -12,8 +11,8 @@ import java.util.List;
 @Setter
 @Builder
 public class StoryComment implements Serializable {
-    private User userComment;
-    private Date timeOfComment;
+    private String userId;
+  //  private Date timeOfComment;
     private String text;
     private List<LikeComment> likes;
 

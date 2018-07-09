@@ -11,5 +11,6 @@ import java.io.Serializable;
 @Builder
 public class LikeComment implements Serializable {
 
-    private User userLikeComment;
+    private String userId;
+    private String commentId;
 }

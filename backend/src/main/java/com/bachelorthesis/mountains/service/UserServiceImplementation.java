@@ -73,6 +73,8 @@ public class UserServiceImplementation implements UserService {
         String mail = userDto.getMail();
         int points = userDto.getPoints();
         byte[] pic = userDto.getProfilePicture();
+        String mapType = userDto.getMapType();
+
         if (firstName != EMPTY_STRING) {
             userToUpdate.setFirstName(userDto.getFirstName());
         }
@@ -87,6 +89,9 @@ public class UserServiceImplementation implements UserService {
         }
         if (pic != null) {
             userToUpdate.setProfilePicture(userDto.getProfilePicture());
+        }
+        if (mapType != EMPTY_STRING) {
+            userToUpdate.setMapType(userDto.getMapType());
         }
         User userUpdated = userRepository.save(userToUpdate);
         return userMapper.toExternal(userUpdated);

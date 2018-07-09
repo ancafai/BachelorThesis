@@ -9,6 +9,6 @@ import lombok.*;
 @Builder
 public class Picture {
 
-    private byte[] picture;
+    private String[] picture;
 
 }
