@@ -12,6 +12,7 @@ public class UserDto extends NewUserDto {
     private int points;
     private byte[] profilePicture;
     private String mapType;
+    private String description;
 
     public UserDto(String id,
                      String username,
@@ -21,11 +22,13 @@ public class UserDto extends NewUserDto {
                      String lastname,
                      int points,
                      byte[] profilepicture,
+                    String description,
                     String mapType) {
         super(firstname, lastname, mail, username, password);
         this.id = id;
         this.points = points;
         this.profilePicture = profilepicture;
+        this.description = description;
         this.mapType = mapType;
     }
 

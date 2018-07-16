@@ -10,8 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
-
 @RequestMapping("/user")
 @RestController
 @CrossOrigin("*")
@@ -54,10 +52,18 @@ public class UserController {
         return userService.update(userDto);
     }
 
-    @RequestMapping("login")
-    public Principal user(Principal principal) {
-        logger.info("user logged "+principal);
-        return principal;
+    @RequestMapping("login/{username}/{password}")
+    public UserDto login(@PathVariable String username,@PathVariable String password){
+        return userService.login(username, password);
     }
 
+
+    @RequestMapping(value="register", method = RequestMethod.POST)
+    public String register(@RequestBody NewUserDto newUserDto){
+        if(userService.register(newUserDto)){
+            return "GOOD";
+        }else{
+            return "username not available";
+        }
+    }
 }

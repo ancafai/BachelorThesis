@@ -66,6 +66,12 @@ public class MountainController {
         return storyDtoList;
     }
 
+    @RequestMapping (value = "getstoriesuser/{userId}", method = RequestMethod.GET)
+    public StoryDtoList getStoriesMountainUser( @PathVariable String userId){
+        StoryDtoList storyDtoList = new StoryDtoList(mountainService.findStoriesUser(userId));
+        return storyDtoList;
+    }
+
     @RequestMapping (value = "deletestory/{mountainId}/{storyId}", method = RequestMethod.DELETE)
     public MountainDto deleteStories(@PathVariable String mountainId, @PathVariable String storyId) {
         return mountainService.deleteStory(mountainId, storyId);

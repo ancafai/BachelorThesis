@@ -19,5 +19,9 @@ public interface UserService {
 
     UserDto update(UserDto userDto);
 
+    boolean register(NewUserDto newUserDto);
+
+    UserDto login(String username, String password);
+
 
 }

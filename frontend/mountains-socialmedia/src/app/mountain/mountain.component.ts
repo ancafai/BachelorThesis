@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Mountain} from './shared/mountain.model';
-import {MountainHomeService} from './shared/mountain-home.service';
+import {MountainService} from './shared/mountain.service';
 
 @Component({
   selector: 'app-mountain',
@@ -12,7 +12,7 @@ export class MountainComponent implements OnInit {
   mountains: Mountain[];
   newMountain: Mountain = new Mountain();
 
-  constructor( private mountainService: MountainHomeService ) { }
+  constructor( private mountainService: MountainService ) { }
 
 
   ngOnInit(): void {

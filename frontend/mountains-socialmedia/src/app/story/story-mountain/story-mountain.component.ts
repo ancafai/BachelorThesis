@@ -3,6 +3,7 @@ import {Story} from '../shared/story.model';
 import {StoryService} from '../shared/story.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Response} from '@angular/http';
+import {UserService} from "../../profile/shared/user.service";
 
 @Component({
   selector: 'app-story-mountain',
@@ -14,7 +15,8 @@ export class StoryMountainComponent implements OnInit {
   stories: Story[];
   idMountain: string;
 
-  constructor( private activatedRoute: ActivatedRoute, private router: Router, private storyService: StoryService ) { }
+
+  constructor( private activatedRoute: ActivatedRoute, private router: Router, private storyService: StoryService, private userService: UserService ) { }
 
 
   ngOnInit(): void {
@@ -36,7 +38,19 @@ export class StoryMountainComponent implements OnInit {
   }
 
 
+  truncateDescription(descr: string): string {
+    return descr.slice(0, 200);
+  }
 
+  getUserName(id: string): string {
+    this.userService.findById(id)
+      .subscribe(
+        userFound => {
+          return userFound.username;
+        }
+      );
+    return 'user';
+  }
 
 
 }

@@ -5,6 +5,7 @@ export class User extends NewUser {
   public points: number;
   public picture: string;
   public mapType: string;
+  public description: string;
 
   constructor(firstName?: string,
               lastName?: string,
@@ -14,12 +15,14 @@ export class User extends NewUser {
               id?: string,
               points?: number,
               picture?: string,
+              description?: string,
               mapType?: string
   ) {
     super(firstName, lastName, mail, username, password);
     this.id = id;
     this.points = points;
     this.mapType = mapType;
+    this.description = description;
     this.picture = picture;
   }
 }

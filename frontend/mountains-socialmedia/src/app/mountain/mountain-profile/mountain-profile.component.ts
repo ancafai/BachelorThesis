@@ -1,19 +1,10 @@
-
-import {Injectable} from '@angular/core';
-import {Http, Response} from '@angular/http';
-
-
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
-
-import { Mountain } from './mountain.model';
-import { NewMountain } from './newMountain.model';
-import 'rxjs/add/operator/toPromise';
-import {Observable} from 'rxjs/Observable';
-
-import {environment} from '../../../environments/environment';
-import {Router} from '@angular/router';
-
+import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs/Observable";
+import {Mountain} from "../shared/mountain.model";
+import {environment} from "../../../environments/environment";
+import {Router} from "@angular/router";
+import {UserService} from "../../profile/shared/user.service";
+import {MountainService} from "../shared/mountain.service";
 
 
 const apiToken = environment.MAPBOX_API_KEY;
@@ -24,48 +15,35 @@ declare var require: any;
 const defaultCoords: number[] = [40, -80];
 const defaultZoom = 8;
 
-@Injectable()
-export class MountainHomeService {
-  private mountainsUrl = 'http://localhost:8080';
+@Component({
+  selector: 'app-mountain-profile',
+  templateUrl: './mountain-profile.component.html',
+  styleUrls: ['./mountain-profile.component.css']
+})
 
-  constructor(private http: Http,
-              private router: Router) {}
+export class MountainProfileComponent implements OnInit {
 
-  getMountains():  Observable<Mountain[]> {
-    return this.http.get(this.mountainsUrl + '/mountain/getall/')
-      .map(this.extractMountains)
-      .catch(this.handleError);
+  mapType = 'streets';
+
+  constructor(private mountainService: MountainService, private userService: UserService, private router: Router) { }
+
+  ngOnInit() {
+    this.plotMap();
   }
 
 
-  findByName(name: string): Observable<Mountain> {
-    return this.http.get(this.mountainsUrl + '/mountain/getbyname/' + name)
-      .map(this.extractDataMountain)
-      .catch(this.handleError);
-  }
-
-  private extractDataMountain(res: Response) {
-    const body = res.json();
-    return body || {};
-  }
-
-
-  private extractMountains(res: Response) {
-    const body = res.json().mountainDtoList || {};
-    return body;
-  }
-
-
-  private handleError(error: Response | any) {
-    let errMsg: string;
-    if (error instanceof Response) {
-      const body = error.json() || '';
-      const err = body.error || JSON.stringify(body);
-      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-    } else {
-      errMsg = error.message ? error.message : error.toString();
-    }
-    return Observable.throw(errMsg);
+  updateMapType() {
+    console.log('BEFORE UPDATE' + this.mapType);
+    this.userService.findByName(localStorage.getItem('username'))
+      .subscribe( userFound => {
+        userFound.mapType = this.mapType;
+        localStorage.setItem('mapType', this.mapType);
+        this.userService.updateUser(userFound)
+          .subscribe( userUpdated =>
+            console.log('Maptype updated: ' + userUpdated.mapType)
+          );
+        }
+      );
   }
 
   plotMap() {
@@ -78,6 +56,14 @@ export class MountainHomeService {
     map.maxZoom = 100;
 
     const listStyles = ['mapbox.dark', 'mapbox.streets', 'mapbox.light', 'mapbox.comic', 'mapbox.satellite'];
+
+    const mapLayer = L.tileLayer('https://api.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      id: 'mapbox.' + localStorage.getItem('mapType'),
+      maxZoom: 15,
+      accessToken: apiToken
+    }).addTo(map);
 
     const dark = L.tileLayer('https://api.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
@@ -93,7 +79,7 @@ export class MountainHomeService {
       id: listStyles[1],
       maxZoom: 15,
       accessToken: apiToken
-    }).addTo(map);
+    });
 
 
     const light = L.tileLayer('https://api.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -125,74 +111,75 @@ export class MountainHomeService {
     const layerList = document.getElementById('menu');
     const inputs = layerList.getElementsByTagName('input');
 
-    for (let i = 0; i < inputs.length; i++) {
-      inputs[i].onclick = switchLayer;
-    }
-
-    function switchLayer(layer) {
+    const switchLayer = (layer) => {
       const layerId = layer.target.id;
 
       if (layerId.toString() === 'streets') {
         streets.addTo(map);
         streets.bringToFront();
+        this.mapType = 'streets';
       }
 
       if (layerId.toString() === 'dark') {
         dark.addTo(map);
         dark.bringToFront();
+        this.mapType = 'dark';
       }
 
 
       if (layerId.toString() === 'light') {
         light.addTo(map);
         light.bringToFront();
+        this.mapType = 'light';
       }
       if (layerId.toString() === 'comic') {
         comic.addTo(map);
         comic.bringToFront();
+        this.mapType = 'comic';
       }
       if (layerId.toString() === 'satellite') {
         satellite.addTo(map);
         satellite.bringToFront();
+        this.mapType = 'satellite';
       }
       console.log(layerId);
+    };
+
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].onclick = switchLayer;
     }
 
 
     const customLayer = L.geoJson(null, {
 
       style:
-        function(feature){
+        function (feature) {
           return {weight: 2, opacity: 0.5, fillOpacity: 0.5, color: '#2f1e1e'};
         }
 
     });
 
 
+    const geoJsonLayer = omnivore.geojson('../../../assets/mountains.geojson', null, customLayer)
+      .on('ready', function () {
+        map.fitBounds(geoJsonLayer.getBounds());
+      }).addTo(map);
 
-      const geoJsonLayer = omnivore.geojson('../../../assets/mountains.geojson', null, customLayer)
-        .on('ready', function () {
-          map.fitBounds(geoJsonLayer.getBounds());
-        }).addTo(map);
+    const onMountainClick = (e) => {
 
-      const onMountainClick = (e) => {
-
-        const mountainFound: Observable<Mountain> = this.findByName(e.layer.feature.properties.DENUMIRE);
-        mountainFound.subscribe( mountain => {
-          console.log('id: ', mountain.id);
-          this.router.navigateByUrl('/story/getstoriesofmountain/' + mountain.id);
-          // e.layer.setStyle({weight: 2, opacity: 0.5, fillOpacity: 0.5, color: e.layer.feature.properties.color});
-        });
-
+      const mountainFound: Observable<Mountain> = this.mountainService.findByName(e.layer.feature.properties.DENUMIRE);
+      mountainFound.subscribe(mountain => {
+        console.log('id: ', mountain.id);
+        this.router.navigateByUrl('/story/getstoriesofmountain/' + mountain.id);
+        // e.layer.setStyle({weight: 2, opacity: 0.5, fillOpacity: 0.5, color: e.layer.feature.properties.color});
+      });
 
 
-      };
+    };
 
-      geoJsonLayer.on('click', onMountainClick);
+    geoJsonLayer.on('click', onMountainClick);
 
 
-
-    }
-
+  }
 
 }

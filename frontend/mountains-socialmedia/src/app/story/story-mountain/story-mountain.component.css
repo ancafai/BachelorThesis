@@ -1,0 +1,12 @@
+
+.btn-read {
+  position:absolute;
+  bottom: 4%;
+  eft: 4%;
+}
+
+.btn-edit {
+  position:absolute;
+  right: 4%;
+  bottom: 4%;
+}

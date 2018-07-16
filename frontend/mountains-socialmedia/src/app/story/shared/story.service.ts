@@ -15,7 +15,7 @@ import 'rxjs/add/operator/map';
 
 import {environment} from '../../../environments/environment';
 import {Story} from './story.model';
-import {MountainHomeService} from '../../mountain/shared/mountain-home.service';
+import {MountainService} from '../../mountain/shared/mountain.service';
 import {Mountain} from '../../mountain/shared/mountain.model';
 
 
@@ -34,6 +34,14 @@ export class StoryService {
       .map(this.extractStories)
       .catch(this.handleError);
   }
+
+  getStoriesUser(userId: string):  Observable<Story[]> {
+
+    return this.http.get(this.storiesUrl + '/mountain/getstoriesuser/' + userId)
+      .map(this.extractStories)
+      .catch(this.handleError);
+  }
+
 
   getAllStories():  Observable<Story[]> {
 

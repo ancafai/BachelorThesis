@@ -5,6 +5,9 @@ import {NgForm} from '@angular/forms';
 
 import 'rxjs/add/operator/toPromise';
 import {Observable} from 'rxjs/Observable';
+import {Story} from "../story/shared/story.model";
+import {StoryService} from "../story/shared/story.service";
+import {Router} from "@angular/router";
 
 
 
@@ -17,43 +20,58 @@ export class ProfileComponent implements OnInit {
 
 
   users: User[];
-  newUser: User = new User();
+  user: User = new User();
+  stories: Story[];
+  nbstories: number;
 
 
-  constructor( private userService: UserService ) { }
+  constructor( private userService: UserService, private storyService: StoryService, private router: Router ) { }
 
   ngOnInit(): void {
-    this.getUsers();
+   // this.getUsers();
+    this.getUser();
+    this.getStories();
 
   }
 
+  getUser(): void {
+
+    this.userService.getUser()
+      .subscribe(
+        user =>
+          this.user = user
+      );
+  }
 
   getUsers(): void {
 
     this.userService.getUsers()
-      .subscribe
-      (users => {
-        this.users = users;
-      });
-
-    console.log('Inside getUsers in Component: ', this.users);
-  }
-    /*
-
-  createUser(userForm: NgForm): void {
-    this.userService.createUser(this.newUser)
-      .then(createUser => {
-        userForm.reset();
-        this.newUser = new User();
-        this.users.unshift(createUser);
-      });
+      .subscribe(
+        users =>
+          this.users = users
+      );
   }
 
-  deleteUser(id: string): void {
-    this.userService.deleteUser(id)
-      .then (() => {
-        this.users = this.users.filter(user => user.id != id);
-      });
+  getStories(): void {
+      this.userService.findByName(localStorage.getItem('username'))
+        .subscribe(
+          userStories => {
+            this.storyService.getStoriesUser(userStories.id)
+              .subscribe(
+                storiesFound => {
+                  this.stories = storiesFound;
+                  this.nbstories = storiesFound.length;
+                }
+              );
+          }
+        );
+    }
+
+    truncateDescription(descr: string): string {
+      return descr.slice(0, 310);
+    }
+
+  goToMap() {
+    this.router.navigateByUrl('/mountain/getalluser');
   }
-  */
 }

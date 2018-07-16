@@ -7,29 +7,40 @@ import { LoginComponent } from './login/login.component';
 
 import { RouterModule, Routes } from '@angular/router';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { ProfileComponent } from './profile/profile.component';
 import {UserService} from './profile/shared/user.service';
 import { MountainComponent } from './mountain/mountain.component';
-import {MountainHomeService} from './mountain/shared/mountain-home.service';
 import { MountainHomeComponent } from './mountain/mountain-home/mountain-home.component';
 import {StoryAllComponent} from './story/story-all/story-all.component';
 import {StoryService} from './story/shared/story.service';
 import { StoryMountainComponent } from './story/story-mountain/story-mountain.component';
 import { StoryAddComponent } from './story/story-add/story-add.component';
-import {AuthenticationService} from "./login/authentication.service";
+import { RegisterComponent } from './register/register.component';
+import {AngularMaterialModule} from './angular-material.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './shared/navbar.component';
+import { StoryEditComponent } from './story/story-edit/story-edit.component';
+import { MountainProfileComponent } from './mountain/mountain-profile/mountain-profile.component';
+import {MountainService} from './mountain/shared/mountain.service';
+
 
 const appRoutes: Routes = [
   {
-    path: 'user/getall',
+    path: 'user/profile',
     component: ProfileComponent,
     data: { title: 'Users List' }
   },
   {
     path: 'mountain/getall',
     component: MountainHomeComponent,
+    data: { title: 'Mountains List' }
+  },
+  {
+    path: 'mountain/getalluser',
+    component: MountainProfileComponent,
     data: { title: 'Mountains List' }
   },
   {
@@ -52,7 +63,11 @@ const appRoutes: Routes = [
     component: LoginComponent,
     data: { title: 'Login' }
   },
-
+  {
+    path: 'user/register',
+    component: RegisterComponent,
+    data: { title: 'Register' }
+  },
 
   { path: '',
     redirectTo: 'user/login',
@@ -70,20 +85,25 @@ const appRoutes: Routes = [
     StoryAllComponent,
     StoryMountainComponent,
     StoryAddComponent,
+    RegisterComponent,
+    NavbarComponent,
+    StoryEditComponent,
+    MountainProfileComponent,
   ],
   imports: [
     BrowserModule,
+    NgbModule.forRoot(),
     HttpModule,
     FormsModule,
     HttpClientModule,
+    AngularMaterialModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [ AuthenticationService,
-                UserService,
-                MountainHomeService,
+  providers: [  UserService,
+                MountainService,
                 StoryService],
   bootstrap: [AppComponent]
 })

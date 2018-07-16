@@ -18,6 +18,7 @@ public class UserMapper extends AbstractMapper<User, UserDto> {
                     .password(dto.getPassword())
                     .points(dto.getPoints())
                     .profilePicture(dto.getProfilePicture())
+                    .description(dto.getDescription())
                     .mapType(dto.getMapType())
                     .build();
             user.setId(dto.getId());
@@ -36,6 +37,7 @@ public class UserMapper extends AbstractMapper<User, UserDto> {
                     model.getLastName(),
                     model.getPoints(),
                     model.getProfilePicture(),
+                    model.getDescription(),
                     model.getMapType());
             return userDto;
     }

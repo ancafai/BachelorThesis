@@ -105,6 +105,20 @@ public class MountainServiceImplementation implements MountainService {
     }
 
 
+    public List<StoryDto> findStoriesUser(String userId) {
+        List<Mountain> mountainsFindStories = mountainRepository.findAll();
+        List<StoryDto> storiesDto = new ArrayList<StoryDto>();
+        for (Mountain mountain : mountainsFindStories) {
+            List<Story> stories = mountain.getStories();
+            for (Story st: stories) {
+                if (st.getUserId().equals(userId)) {
+                    storiesDto.add(storyMapper.toExternal(st));
+                }
+            }
+        }
+        return storiesDto;
+    }
+
     public List<StoryDto> findStoriesMountain(String mountainId) {
         Mountain mountainFindStories = mountainRepository.findById(mountainId).get();
         List<StoryDto> storiesDto = new ArrayList<StoryDto>();

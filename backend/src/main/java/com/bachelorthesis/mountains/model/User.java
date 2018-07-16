@@ -1,11 +1,11 @@
 package com.bachelorthesis.mountains.model;
 
 import lombok.*;
+import org.springframework.context.annotation.Scope;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.Size;
-import java.io.Serializable;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,7 +13,10 @@ import java.io.Serializable;
 @Setter
 @Builder
 @Document(collection="users")
-public class User implements Serializable {
+@Scope("session")
+public class User  {
+
+
     @Id
     private String id;
 
@@ -39,7 +42,11 @@ public class User implements Serializable {
 
     private byte[] profilePicture;
 
+    private String description;
+
     private String mapType;
+
+
 
 
 

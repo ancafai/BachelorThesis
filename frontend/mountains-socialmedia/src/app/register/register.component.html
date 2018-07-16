@@ -1,0 +1,47 @@
+
+<div class="page-header" filter-color="orange">
+  <div class="page-header-image" style="background-image:url(assets/img/login.jpg)"></div>
+  <div class="container">
+    <div class="col-md-4 content-center">
+      <div class="card card-login card-plain">
+        <form class="form" method="" action="">
+          <div class="content">
+            <div class="input-group form-group-no-border input-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+              </div>
+              <input type="text" class="form-control" name="username" [(ngModel)]="username"  placeholder="Username..." (blur)="focus=false" >
+            </div>
+            <div class="input-group form-group-no-border input-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="now-ui-icons text_caps-small"></i></span>
+              </div>
+              <input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="Password..."  (blur)="focus1=false"/>
+            </div>
+            <div class="input-group form-group-no-border input-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+              </div>
+              <input type="text" class="form-control" name="mail" [(ngModel)]="mail"  placeholder="Mail..." (blur)="focus=false" >
+            </div>
+            <div class="input-group form-group-no-border input-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+              </div>
+              <input type="text" class="form-control" name="firstName" [(ngModel)]="firstName"  placeholder="First name..." (blur)="focus=false" >
+            </div>
+            <div class="input-group form-group-no-border input-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+              </div>
+              <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName"  placeholder="Last name..." (blur)="focus=false" >
+            </div>
+          </div>
+          <div class="footer text-center">
+            <button class="btn btn-primary btn-round btn-lg btn-block" (click)="register()" >Get Started</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -25,6 +25,8 @@ public interface MountainService {
 
     List<StoryDto> findStoriesMountain(String mountainId);
 
+    List<StoryDto> findStoriesUser(String userId);
+
     List<StoryDto> findAllStories();
 
     MountainDto addStory(String mountainId, NewStoryDto newStoryDto);

@@ -18,11 +18,18 @@ export class UserService {
   private usersUrl = 'http://localhost:8080';
   private headers = new Headers({'Content-Type': 'application/json'});
 
+
   constructor(private http: Http) {}
 
   getUsers():  Observable<User[]> {
     return this.http.get(this.usersUrl + '/user/getall/')
       .map(this.extractUsers)
+      .catch(this.handleError);
+  }
+
+  getUser(): Observable<User> {
+    return this.http.get( this.usersUrl + '/user/getbyusername/' + localStorage.getItem('username'))
+      .map(this.extractDataUser)
       .catch(this.handleError);
   }
 
@@ -36,13 +43,20 @@ export class UserService {
     return body || {};
   }
 
+  updateUser(user): Observable<User> {
+    return this.http.put(this.usersUrl + '/user/update/', user)
+      .map(this.extractDataUser)
+      .catch(this.handleError);
+  }
 
+  findByName(name: string): Observable<User> {
+    return this.http.get(this.usersUrl + '/user/getbyusername/' + name)
+      .map(this.extractDataUser)
+      .catch(this.handleError);
+  }
 
-  createUser(urlNew: string, user): Observable<User> {
-    let st = '';
-    st = JSON.stringify(user);
-    console.log('Json sent: ', st);
-    return this.http.post(this.usersUrl + urlNew, st, { headers: this.headers})
+  findById(id: string): Observable<User> {
+    return this.http.get( this.usersUrl + '/user/getbyid/' + id)
       .map(this.extractDataUser)
       .catch(this.handleError);
   }
@@ -58,5 +72,20 @@ export class UserService {
     }
     return Observable.throw(errMsg);
   }
+
+  register(user: NewUser) {
+    const headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.post(this.usersUrl + '/user/register', user)
+      .map(res => res.text());
+  }
+
+  login(username: string, password: string) {
+    const headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.get(this.usersUrl + '/user/login/' + username + '/' + password)
+      .map(res => res.text() ? res.json() : res);
+  }
+
 
 }
