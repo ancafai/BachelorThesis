@@ -57,6 +57,8 @@ public class UserServiceImplementation implements UserService {
         return userMapper.toExternal(userRepository.findById(id).get());
     }
 
+
+
     @Transactional
     @Override
     public void delete(String id) {

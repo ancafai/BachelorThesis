@@ -17,6 +17,7 @@ import {environment} from '../../../environments/environment';
 import {Story} from './story.model';
 import {MountainService} from '../../mountain/shared/mountain.service';
 import {Mountain} from '../../mountain/shared/mountain.model';
+import {User} from "../../profile/shared/user.model";
 
 
 
@@ -50,11 +51,31 @@ export class StoryService {
       .catch(this.handleError);
   }
 
+  getById(storyId: string): Observable<Story> {
+    return this.http.get( this.storiesUrl + '/mountain/getstorybyid/' + storyId)
+      .map(this.extractDataStory)
+      .catch(this.handleError);
+  }
+
+  getUserByStoryId(storyId: string): Observable<User> {
+    return this.http.get(this.storiesUrl + '/mountain/getuserbystoryid/' + storyId)
+      .map(this.extractDataStory)
+      .catch(this.handleError);
+  }
+
   createStory(urlNew: string, story): Observable<Story> {
     let st = '';
     st = JSON.stringify(story);
     console.log('Json sent: ', st);
     return this.http.post(this.storiesUrl + urlNew, st, { headers: this.headers})
+      .map(this.extractDataStory)
+      .catch(this.handleError);
+  }
+
+  updateStory(story): Observable<Story> {
+    let st = '';
+    st = JSON.stringify(story);
+    return this.http.put(this.storiesUrl + '/mountain/updatestory', story, { headers: this.headers})
       .map(this.extractDataStory)
       .catch(this.handleError);
   }

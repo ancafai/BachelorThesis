@@ -1,10 +1,7 @@
 package com.bachelorthesis.mountains.service;
 
 
-import com.bachelorthesis.mountains.dto.MountainDto;
-import com.bachelorthesis.mountains.dto.NewMountainDto;
-import com.bachelorthesis.mountains.dto.NewStoryDto;
-import com.bachelorthesis.mountains.dto.StoryDto;
+import com.bachelorthesis.mountains.dto.*;
 
 import java.util.List;
 import java.util.Set;
@@ -29,11 +26,15 @@ public interface MountainService {
 
     List<StoryDto> findAllStories();
 
+    UserDto getUserByStoryId(String storyId);
+
     MountainDto addStory(String mountainId, NewStoryDto newStoryDto);
 
-    MountainDto deleteStory(String mountainId, String storyId);
+    MountainDto deleteStory(String storyId);
 
-    MountainDto updateStory(String mountainId, StoryDto storyDto);
+    MountainDto updateStory(StoryDto storyDto);
+
+    StoryDto getStoryById(String storyId);
 
 
 }

@@ -25,6 +25,7 @@ import { NavbarComponent } from './shared/navbar.component';
 import { StoryEditComponent } from './story/story-edit/story-edit.component';
 import { MountainProfileComponent } from './mountain/mountain-profile/mountain-profile.component';
 import {MountainService} from './mountain/shared/mountain.service';
+import { StoryViewComponent } from './story/story-view/story-view.component';
 
 
 const appRoutes: Routes = [
@@ -54,7 +55,7 @@ const appRoutes: Routes = [
     data: { title: 'Stories List' }
   },
   {
-    path: 'story/addstory/:idMountain',
+    path: 'story/addstory',
     component: StoryAddComponent,
     data: { title: 'Stories List' }
   },
@@ -68,7 +69,16 @@ const appRoutes: Routes = [
     component: RegisterComponent,
     data: { title: 'Register' }
   },
-
+  {
+    path: 'story/editstory/:storyid',
+    component: StoryEditComponent,
+    data: { title: 'Story edit' }
+  },
+  {
+    path: 'story/view/:storyid',
+    component: StoryViewComponent,
+    data: { title: 'Story view' }
+  },
   { path: '',
     redirectTo: 'user/login',
     pathMatch: 'full'
@@ -89,6 +99,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     StoryEditComponent,
     MountainProfileComponent,
+    StoryViewComponent,
   ],
   imports: [
     BrowserModule,

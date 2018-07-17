@@ -72,14 +72,25 @@ public class MountainController {
         return storyDtoList;
     }
 
-    @RequestMapping (value = "deletestory/{mountainId}/{storyId}", method = RequestMethod.DELETE)
-    public MountainDto deleteStories(@PathVariable String mountainId, @PathVariable String storyId) {
-        return mountainService.deleteStory(mountainId, storyId);
+    @RequestMapping (value = "getuserbystoryid/{storyId}", method = RequestMethod.GET)
+    public UserDto getUserByStoryId( @PathVariable String storyId){
+        return mountainService.getUserByStoryId(storyId);
     }
 
-    @RequestMapping (value = "updatestory/{mountainId}", method = RequestMethod.PUT)
-    public MountainDto updateStory(@PathVariable String mountainId, @RequestBody StoryDto storyDto) {
-        return mountainService.updateStory(mountainId, storyDto);
+    @RequestMapping (value = "deletestory/{storyId}", method = RequestMethod.DELETE)
+    public MountainDto deleteStories(@PathVariable String storyId) {
+        return mountainService.deleteStory(storyId);
+    }
+
+    @RequestMapping (value = "updatestory", method = RequestMethod.PUT)
+    public MountainDto updateStory(@RequestBody StoryDto storyDto) {
+        return mountainService.updateStory(storyDto);
+
+    }
+
+    @RequestMapping (value = "getstorybyid/{storyId}", method = RequestMethod.GET)
+    public StoryDto getStoryById(@PathVariable String storyId) {
+        return mountainService.getStoryById(storyId);
 
     }
 

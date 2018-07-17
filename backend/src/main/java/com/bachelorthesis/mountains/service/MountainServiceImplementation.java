@@ -1,16 +1,11 @@
 package com.bachelorthesis.mountains.service;
 
 
-import com.bachelorthesis.mountains.dto.MountainDto;
-import com.bachelorthesis.mountains.dto.NewMountainDto;
-import com.bachelorthesis.mountains.dto.NewStoryDto;
-import com.bachelorthesis.mountains.dto.StoryDto;
-import com.bachelorthesis.mountains.mapper.MountainMapper;
-import com.bachelorthesis.mountains.mapper.NewMountainMapper;
-import com.bachelorthesis.mountains.mapper.NewStoryMapper;
-import com.bachelorthesis.mountains.mapper.StoryMapper;
+import com.bachelorthesis.mountains.dto.*;
+import com.bachelorthesis.mountains.mapper.*;
 import com.bachelorthesis.mountains.model.Mountain;
 import com.bachelorthesis.mountains.model.Story;
+import com.bachelorthesis.mountains.model.User;
 import com.bachelorthesis.mountains.repository.MountainRepository;
 import com.bachelorthesis.mountains.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,10 +35,14 @@ public class MountainServiceImplementation implements MountainService {
     private UserRepository userRepository;
 
     @Autowired
+    private UserMapper userMapper;
+
+    @Autowired
     private StoryMapper storyMapper;
 
     @Autowired
     private NewStoryMapper newStoryMapper;
+
 
 
 
@@ -144,6 +143,20 @@ public class MountainServiceImplementation implements MountainService {
         return stories;
     }
 
+    @Override
+    public UserDto getUserByStoryId(String storyId) {
+
+       StoryDto storyFound = this.getStoryById(storyId);
+        Set<UserDto> persons = userMapper.toExternals(new HashSet<>((List<User>) userRepository.findAll()));
+        for (UserDto per : persons) {
+            if (per.getId().equals(storyFound.getUserId())) {
+                return per;
+            }
+        }
+        return null;
+    }
+
+
     @Transactional
     public MountainDto addStory(String mountainId, NewStoryDto newStoryDto) {
         Mountain mountainAddStory = mountainRepository.findById(mountainId).get();
@@ -156,20 +169,45 @@ public class MountainServiceImplementation implements MountainService {
 
     @Transactional
     @Override
-    public MountainDto deleteStory(String mountainId, String storyId) {
-        Mountain mountainStoryToDelete = mountainRepository.findById(mountainId).get();
-
-        mountainStoryToDelete.deleteStory(storyId);
-        Mountain mountainStoryDeleted = mountainRepository.save(mountainStoryToDelete);
-        return mountainMapper.toExternal(mountainStoryDeleted);
+    public MountainDto deleteStory(String storyId) {
+      //  Mountain mountainStoryToDelete = mountainRepository.findById(mountainId).get();
+        Set<MountainDto> mountains = this.findAll();
+        for (MountainDto m : mountains) {
+            for (Story st : m.getStories()) {
+                if (st.getId().equals(storyId)) {
+                    mountainMapper.toInternal(m).deleteStory(storyId);
+                    Mountain mountainUpdated = mountainRepository.save(mountainMapper.toInternal(m));
+                    return mountainMapper.toExternal(mountainUpdated);
+                }
+            }
+        }
+        return null;
     }
 
     @Transactional
-    public MountainDto updateStory(String mountainId, StoryDto storyDto) {
-        Mountain mountainUpdateStory = mountainRepository.findById(mountainId).get();
+    @Override
+    public MountainDto updateStory(StoryDto storyDto) {
+        Set<MountainDto> mountains = this.findAll();
+        for (MountainDto m : mountains) {
+            for (Story st : m.getStories()) {
+                if (st.getId().equals(storyDto.getId())) {
+                    mountainMapper.toInternal(m).updateStory(storyMapper.toInternal(storyDto));
+                    Mountain mountainUpdated = mountainRepository.save(mountainMapper.toInternal(m));
+                    return mountainMapper.toExternal(mountainUpdated);
+                }
+            }
+        }
+        return null;
+    }
 
-        mountainUpdateStory.updateStory(storyMapper.toInternal(storyDto));
-        Mountain mountainUpdated = mountainRepository.save(mountainUpdateStory);
-        return mountainMapper.toExternal(mountainUpdated);
+    @Override
+    public StoryDto getStoryById(String storyId) {
+        List<StoryDto> stories = this.findAllStories();
+        for (StoryDto story : stories) {
+            if (story.getId().equals(storyId)) {
+                return story;
+            }
+        }
+        return null;
     }
 }

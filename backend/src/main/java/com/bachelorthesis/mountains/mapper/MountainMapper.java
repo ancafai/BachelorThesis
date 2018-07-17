@@ -12,7 +12,7 @@ public class MountainMapper extends AbstractMapper<Mountain, MountainDto> {
     public Mountain toInternal(MountainDto dto) {
         Mountain mountain = Mountain.builder()
                 .id(dto.getId())
-                .name(dto.getId())
+                .name(dto.getName())
                 .coordinates(dto.getCoordinates())
                 .stories(dto.getStories())
                 .build();

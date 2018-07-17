@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   constructor( private activatedRoute: ActivatedRoute,
                private router: Router,
-              private userService: UserService) { }
+              private userService: UserService) {}
 
   ngOnInit(): void {
      }
@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
         this.userService.findByName(this.username)
           .subscribe(userFound => {
             localStorage.setItem('mapType', userFound.mapType);
+            localStorage.setItem('userId', userFound.id);
             }
           );
 

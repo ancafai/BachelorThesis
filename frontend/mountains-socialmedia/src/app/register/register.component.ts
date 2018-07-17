@@ -32,6 +32,11 @@ export class RegisterComponent implements OnInit {
     this.userService.register(user).subscribe(data => {
       if (data === 'GOOD') {
         localStorage.setItem('username', this.username);
+        this.userService.findByName(this.username)
+          .subscribe(userFound => {
+              localStorage.setItem('userId', userFound.id);
+            }
+          );
         console.log('local storage is: ' + localStorage.getItem('username'));
         this.router.navigateByUrl('/user/profile');
       } else {

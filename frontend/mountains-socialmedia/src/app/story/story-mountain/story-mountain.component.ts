@@ -14,6 +14,7 @@ export class StoryMountainComponent implements OnInit {
 
   stories: Story[];
   idMountain: string;
+  userFound: string;
 
 
   constructor( private activatedRoute: ActivatedRoute, private router: Router, private storyService: StoryService, private userService: UserService ) { }
@@ -42,15 +43,11 @@ export class StoryMountainComponent implements OnInit {
     return descr.slice(0, 200);
   }
 
-  getUserName(id: string): string {
-    this.userService.findById(id)
-      .subscribe(
-        userFound => {
-          return userFound.username;
-        }
-      );
-    return 'user';
-  }
 
+
+
+  goToViewStory(storyId: string) {
+    this.router.navigateByUrl('story/view/' + storyId);
+  }
 
 }

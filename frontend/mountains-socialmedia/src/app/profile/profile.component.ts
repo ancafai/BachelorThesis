@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
   user: User = new User();
   stories: Story[];
   nbstories: number;
+  isUser: boolean;
 
 
   constructor( private userService: UserService, private storyService: StoryService, private router: Router ) { }
@@ -73,5 +74,17 @@ export class ProfileComponent implements OnInit {
 
   goToMap() {
     this.router.navigateByUrl('/mountain/getalluser');
+  }
+
+  goToAddStory() {
+    this.router.navigateByUrl('/story/addstory');
+  }
+
+  goToEditStory(storyId: string) {
+    this.router.navigateByUrl('story/editstory/' + storyId);
+  }
+
+  goToViewStory(storyId: string) {
+    this.router.navigateByUrl('story/view/' + storyId);
   }
 }
