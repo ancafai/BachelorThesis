@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {NewStory} from '../shared/newStory.model';
 import {StoryService} from '../shared/story.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -15,6 +15,7 @@ export class StoryAddComponent implements OnInit {
   story: NewStory = new NewStory('', '', '', '');
   idMountain: string;
   selectedMountain = 'Select Mountain';
+
 
   constructor( private activatedRoute: ActivatedRoute, private router: Router, private storyService: StoryService, private mountainService: MountainService ) { }
 
@@ -53,5 +54,6 @@ export class StoryAddComponent implements OnInit {
         }
       );
   }
+
 
 }

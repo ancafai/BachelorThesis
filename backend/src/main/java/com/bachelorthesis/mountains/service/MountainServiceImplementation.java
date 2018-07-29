@@ -118,6 +118,7 @@ public class MountainServiceImplementation implements MountainService {
         return storiesDto;
     }
 
+
     public List<StoryDto> findStoriesMountain(String mountainId) {
         Mountain mountainFindStories = mountainRepository.findById(mountainId).get();
         List<StoryDto> storiesDto = new ArrayList<StoryDto>();
@@ -141,6 +142,26 @@ public class MountainServiceImplementation implements MountainService {
             }
         }
         return stories;
+    }
+
+    public List<StoryDto> findStoriesUserMountain(String userId, String mountainId) {
+        List<StoryDto> storiesUserMountain = new ArrayList<StoryDto>();
+        List<StoryDto> storiesMountain = findStoriesMountain(mountainId);
+        for (StoryDto story : storiesMountain) {
+            if (story.getUserId().equals(userId)) {
+                storiesUserMountain.add(story);
+            }
+        }
+        return storiesUserMountain;
+    }
+
+    public String getColorRegion(String userId, String mountainId) {
+        List<StoryDto> stories = findStoriesUserMountain(userId, mountainId);
+        if (stories.size() != 0) {
+            return stories.get(stories.size() - 1).getColor();
+
+        }
+        return "";
     }
 
     @Override

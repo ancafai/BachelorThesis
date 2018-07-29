@@ -3,19 +3,19 @@
     <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg5.jpg') ;">
     </div>
     <div class="container profile-content">
-      <div class="content-center">
-        <div class="photo-container">
-          <img src="assets/img/ryan.jpg" class="avatar" alt="">
+      <div class="content-center pt-5">
+        <div class="photo-container pt-5">
+            <img src="{{photo}}" class="rounded-circle avatar" alt="">
         </div>
         <h3 class="title mt-3">{{user.username}}</h3>
         <h6 class="category">{{user.firstName}} {{user.lastName}}</h6>
         <div class="content row inline-column-row">
           <div class="social-description col-sm">
-            <h2>{{user.points}}</h2>
+            <h3>{{user.points}}</h3>
             <h6>points</h6>
           </div>
           <div class="social-description col-sm">
-            <h2>{{nbstories}}</h2>
+            <h3>{{nbstories}}</h3>
             <h6>stories</h6>
           </div>
         </div>
@@ -43,7 +43,7 @@
                       <div class="row collections" *ngIf="i%2===0">
                         <div class="col-md-6">
                           <div class="card" style="height: 35rem;">
-                              <img class="card-img-top" src="assets/img/bg1.jpg" alt="Card image cap">
+                            <img class="card-img-top" *ngIf="stories[i].pictures != null" src="{{prelucrateImage(stories[i].pictures[0])}}" alt="Card image cap">
                               <div class="card-body">
                                 <h5 class="card-title">{{stories[i].title}}</h5>
 
@@ -60,7 +60,7 @@
                         </div>
                         <div *ngIf="stories[i + 1]" class="col-md-6">
                           <div class="card" style="height: 35rem;">
-                            <img class="card-img-top" src="assets/img/bg1.jpg" alt="Card image cap">
+                            <img class="card-img-top" *ngIf="stories[i+1].pictures != null" src="{{prelucrateImage(stories[i+1].pictures[0])}}" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">{{stories[i+1].title}}</h5>
 

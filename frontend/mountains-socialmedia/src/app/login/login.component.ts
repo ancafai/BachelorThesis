@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   errorMessage: string;
   username: string;
   password: string;
+  loginOk: string;
   data: Date = new Date();
 
 
@@ -25,12 +26,15 @@ export class LoginComponent implements OnInit {
               private userService: UserService) {}
 
   ngOnInit(): void {
+    localStorage.setItem('username', '');
+    localStorage.setItem('mapType', '');
+    localStorage.setItem('userId', '');
      }
 
   login() {
     this.userService.login(this.username, this.password).subscribe(data => {
       if (data._body === '') {
-        alert('login or password in correct');
+        alert('login or password is incorrect');
       } else {
         localStorage.setItem('username', this.username);
         this.userService.findByName(this.username)
@@ -46,8 +50,5 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  register() {
-    this.router.navigateByUrl('/user/register');
-  }
 
 }

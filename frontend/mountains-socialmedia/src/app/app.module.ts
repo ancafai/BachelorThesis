@@ -10,7 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './profile/profile-view/profile.component';
 import {UserService} from './profile/shared/user.service';
 import { MountainComponent } from './mountain/mountain.component';
 import { MountainHomeComponent } from './mountain/mountain-home/mountain-home.component';
@@ -26,6 +26,8 @@ import { StoryEditComponent } from './story/story-edit/story-edit.component';
 import { MountainProfileComponent } from './mountain/mountain-profile/mountain-profile.component';
 import {MountainService} from './mountain/shared/mountain.service';
 import { StoryViewComponent } from './story/story-view/story-view.component';
+import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
+import { StoryMountainUserComponent } from './story/story-mountain-user/story-mountain-user.component';
 
 
 const appRoutes: Routes = [
@@ -55,6 +57,12 @@ const appRoutes: Routes = [
     data: { title: 'Stories List' }
   },
   {
+    path: 'story/getstoriesofmountainuser/:idUser/:idMountain',
+    component:  StoryMountainUserComponent,
+    data: { title: 'Stories List' }
+  },
+
+  {
     path: 'story/addstory',
     component: StoryAddComponent,
     data: { title: 'Stories List' }
@@ -79,6 +87,10 @@ const appRoutes: Routes = [
     component: StoryViewComponent,
     data: { title: 'Story view' }
   },
+  { path: 'user/profile/edit',
+    component: ProfileEditComponent,
+    data: { title: 'Profile edit' }
+  },
   { path: '',
     redirectTo: 'user/login',
     pathMatch: 'full'
@@ -100,6 +112,8 @@ const appRoutes: Routes = [
     StoryEditComponent,
     MountainProfileComponent,
     StoryViewComponent,
+    ProfileEditComponent,
+    StoryMountainUserComponent,
   ],
   imports: [
     BrowserModule,

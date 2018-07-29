@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RequestMapping("/user")
 @RestController
@@ -66,5 +67,55 @@ public class UserController {
             return "username not available";
         }
     }
+
+
+    @RequestMapping(value = "update/image", method = RequestMethod.PUT, consumes = "multipart/form-data")
+    @ResponseBody
+    public UserDto updateUser(@RequestPart("file") MultipartFile file,
+                              @RequestPart("user")  UserDto userDto) {
+        byte[] content = null;
+        if (!file.isEmpty()) {
+            try {
+                content = file.getBytes();
+            } catch (Exception e) {
+                return null;
+            }
+        }
+        UserDto updatedUser = new UserDto(userDto.getId(),
+                userDto.getUsername(),
+                userDto.getPassword(),
+                userDto.getMail(),
+                userDto.getFirstName(),
+                userDto.getLastName(),
+                userDto.getPoints(),
+                content,
+                userDto.getDescription(),
+                userDto.getMapType());
+
+
+        return userService.update(updatedUser);
+    }
+
+    @RequestMapping(value = "update/noimage", method = RequestMethod.PUT, consumes = "multipart/form-data")
+    @ResponseBody
+    public UserDto updateUserNoImage(@RequestPart("user")  UserDto userDto) {
+
+        UserDto updatedUser = new UserDto(userDto.getId(),
+                userDto.getUsername(),
+                userDto.getPassword(),
+                userDto.getMail(),
+                userDto.getFirstName(),
+                userDto.getLastName(),
+                userDto.getPoints(),
+                null,
+                userDto.getDescription(),
+                userDto.getMapType());
+
+
+        return userService.update(updatedUser);
+    }
+
+
+
 
 }

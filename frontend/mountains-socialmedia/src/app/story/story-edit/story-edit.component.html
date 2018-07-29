@@ -1,8 +1,9 @@
-<div class="wrapper">
+<div class="section">
+  <div class="container">
   <form>
 
     <div class="row">
-      <div class="col-md-9 col-sm-9">
+      <div class="col-md-10 col-sm-10">
         <h1>Describe your story</h1>
         <div class="form-group">
           <h2>Title </h2>
@@ -17,21 +18,36 @@
 
         <div class="form-group">
           <h2>Color</h2>
-          <input type="text" name="color" class="form-control" [(ngModel)]="story.color"
+          <input type="color" name="color" [(ngModel)]="story.color"
                  #color="ngModel">
+        </div>
+
+        <div class="fileinput fileinput-new" data-provides="fileinput">
+          <div>
+            <span class="btn btn-outline-default btn-file btn-round">
+              <span class="fileinput-new">Add Photos</span>
+              <input #myFile type="file" name="" multiple (change)="fileChange($event)">
+            </span>
+            <br>
+            <button (click)="deletePhoto()" class="btn btn-link btn-danger fileinput-exists" data-dismiss="fileinput">
+              <i class="fa fa-times"></i>
+              Erase pictures
+            </button>
+          </div>
         </div>
 
 
       </div>
     </div>
     <div class="row inline-column-row">
-      <div class="col-md-3 col-sm-3 ml-auto">
-        <button class="btn btn-outline-danger btn-block btn-round">Cancel</button>
+      <div class="col-md-5 col-sm-5">
+        <button class="btn btn-outline-danger btn-block btn-round" (click)="goBack($event)">Cancel</button>
       </div>
-      <div class="col-md-3 col-sm-3 mr-auto">
+      <div class="col-md-5 col-sm-">
         <button class="btn btn-primary btn-block btn-round" (click)="editStory($event)">Save &amp; Publish
         </button>
       </div>
     </div>
   </form>
+</div>
 </div>

@@ -115,8 +115,16 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public UserDto login(String username, String password){
-        return userMapper.toExternal(userRepository.findByUsername(username));
+        User userFound= userRepository.findByUsername(username);
+        if (userFound == null) {
+            return null;
+        }
+        else if (userFound.getPassword().equals(password)) {
+            return userMapper.toExternal(userFound);
+        }
+        return null;
     }
+
 
 
 

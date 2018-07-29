@@ -1,8 +1,9 @@
-<div class="wrapper">
+<div class="section">
+  <div class="container">
               <form>
 
                 <div class="row">
-                  <div class="col-md-9 col-sm-9">
+                  <div class="col-md-10 col-sm-10">
                     <h1>Describe your story</h1>
                     <div class="form-group">
                       <h2>Title </h2>
@@ -17,8 +18,8 @@
 
                     <div class="form-group">
                       <h2>Color</h2>
-                      <input type="text" name="color" class="form-control" [(ngModel)]="story.color"
-                             #color="ngModel">
+
+                       <input type="color" name="color" [(ngModel)]="story.color" value="#e66465" #color="ngModel">
                     </div>
 
                     <div ngbDropdown class="d-inline-block dropdown long-dropdown">
@@ -31,16 +32,19 @@
                       </div>
                     </div>
 
+
+
+
                   </div>
                 </div>
                 <div class="row inline-column-row">
-                  <div class="col-md-3 col-sm-3 ml-auto">
+                  <div class="col-md-5">
                     <button class="btn btn-outline-danger btn-block btn-round">Cancel</button>
                   </div>
-                  <div class="col-md-3 col-sm-3 mr-auto">
-                    <button class="btn btn-primary btn-block btn-round" (click)="createStory($event)">Save &amp; Publish
-                    </button>
+                  <div class="col-md-5">
+                    <button class="btn btn-primary btn-block btn-round" (click)="createStory($event)">Save &amp; Publish</button>
                   </div>
                 </div>
               </form>
+</div>
 </div>

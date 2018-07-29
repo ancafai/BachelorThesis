@@ -1,6 +1,5 @@
 package com.bachelorthesis.mountains.dto;
 
-import com.bachelorthesis.mountains.model.Picture;
 import com.bachelorthesis.mountains.model.StoryComment;
 import com.bachelorthesis.mountains.model.StoryLike;
 import lombok.AllArgsConstructor;
@@ -14,7 +13,7 @@ import java.util.List;
 @Getter
 public class StoryDto extends NewStoryDto {
     private String id;
-    private List<Picture> pictures;
+    private List<byte[]> pictures;
     private List<StoryLike> storyLikes;
     private List<StoryComment> storyComments;
 
@@ -23,7 +22,7 @@ public class StoryDto extends NewStoryDto {
                    String text,
                    String color,
                    String id,
-                   List<Picture> pictures,
+                   List<byte[]> pictures,
                    List<StoryLike> storyLikes,
                    List<StoryComment> storyComments) {
         super(userId, title, text, color);

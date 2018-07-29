@@ -1,6 +1,6 @@
 
 import {Injectable} from '@angular/core';
-import {Headers, Http, Response} from '@angular/http';
+import {Headers, Http, RequestOptions, Response} from '@angular/http';
 
 
 import 'rxjs/add/operator/catch';
@@ -49,6 +49,13 @@ export class UserService {
       .catch(this.handleError);
   }
 
+
+  updateWithFile(url, formData: FormData): Observable <any> {
+    return this.http.put(this.usersUrl + url, formData)
+      .map(response => response)
+      .catch(error => Observable.throw(error));
+  }
+
   findByName(name: string): Observable<User> {
     return this.http.get(this.usersUrl + '/user/getbyusername/' + name)
       .map(this.extractDataUser)
@@ -85,7 +92,9 @@ export class UserService {
     headers.append('Content-type', 'application/json');
     return this.http.get(this.usersUrl + '/user/login/' + username + '/' + password)
       .map(res => res.text() ? res.json() : res);
+
   }
+
 
 
 }

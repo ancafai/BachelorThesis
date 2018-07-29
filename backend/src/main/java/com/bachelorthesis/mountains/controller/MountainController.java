@@ -6,6 +6,10 @@ import com.bachelorthesis.mountains.repository.MountainRepository;
 import com.bachelorthesis.mountains.service.MountainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RequestMapping("/mountain")
 @RestController
@@ -67,9 +71,19 @@ public class MountainController {
     }
 
     @RequestMapping (value = "getstoriesuser/{userId}", method = RequestMethod.GET)
-    public StoryDtoList getStoriesMountainUser( @PathVariable String userId){
+    public StoryDtoList getStoriesUser( @PathVariable String userId){
         StoryDtoList storyDtoList = new StoryDtoList(mountainService.findStoriesUser(userId));
         return storyDtoList;
+    }
+    @RequestMapping (value = "getstoriesusermountain/{userId}/{mountainId}", method = RequestMethod.GET)
+    public StoryDtoList getStoriesMountainUser( @PathVariable String userId, @PathVariable String mountainId){
+        StoryDtoList storyDtoList = new StoryDtoList(mountainService.findStoriesUserMountain(userId, mountainId));
+        return storyDtoList;
+    }
+
+    @RequestMapping (value = "getcolorregion/{userId}/{mountainId}", method = RequestMethod.GET)
+    public String getColorRegion( @PathVariable String userId, @PathVariable String mountainId){
+        return mountainService.getColorRegion(userId, mountainId);
     }
 
     @RequestMapping (value = "getuserbystoryid/{storyId}", method = RequestMethod.GET)
@@ -82,10 +96,56 @@ public class MountainController {
         return mountainService.deleteStory(storyId);
     }
 
+    /*
     @RequestMapping (value = "updatestory", method = RequestMethod.PUT)
     public MountainDto updateStory(@RequestBody StoryDto storyDto) {
         return mountainService.updateStory(storyDto);
 
+    }
+    */
+
+    @RequestMapping(value = "updatestory", method = RequestMethod.PUT, consumes = "multipart/form-data")
+    @ResponseBody
+    public MountainDto updateStory(@RequestPart("files") MultipartFile[] files,
+                              @RequestPart("story")  StoryDto storyDto) {
+        List<byte[]> content = new ArrayList<byte[]>();
+        if (files.length != 0) {
+            try {
+                for (MultipartFile uploadedFile : files) {
+                    content.add(uploadedFile.getBytes());
+                }
+            } catch (Exception e) {
+                return null;
+            }
+        }
+
+        StoryDto updatedStory = new StoryDto(storyDto.getUserId(),
+                storyDto.getTitle(),
+                storyDto.getText(),
+                storyDto.getColor(),
+                storyDto.getId(),
+                content,
+                storyDto.getStoryLikes(),
+                storyDto.getStoryComments());
+
+        return mountainService.updateStory(updatedStory);
+    }
+
+    @RequestMapping(value = "updatestorynoimage", method = RequestMethod.PUT, consumes = "multipart/form-data")
+    @ResponseBody
+    public MountainDto updateStoryNoImage(@RequestPart("story")  StoryDto storyDto) {
+
+
+        StoryDto updatedStory = new StoryDto(storyDto.getUserId(),
+                storyDto.getTitle(),
+                storyDto.getText(),
+                storyDto.getColor(),
+                storyDto.getId(),
+                null,
+                storyDto.getStoryLikes(),
+                storyDto.getStoryComments());
+
+        return mountainService.updateStory(updatedStory);
     }
 
     @RequestMapping (value = "getstorybyid/{storyId}", method = RequestMethod.GET)
@@ -93,6 +153,7 @@ public class MountainController {
         return mountainService.getStoryById(storyId);
 
     }
+
 
 
 

@@ -19,7 +19,7 @@ public class Story {
     private String color;
   //  private Date timeOfStory;
 
-    private List<Picture> pictures;
+    private List<byte[]> pictures;
     private List<StoryLike> storyLikes;
     private List<StoryComment> storyComments;
 

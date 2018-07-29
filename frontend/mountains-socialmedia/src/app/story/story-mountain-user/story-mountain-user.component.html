@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="section">
+    <div class="container">
+
+      <div class="row"></div>
+      <div class="row">
+        <div class="mt-5">
+          <h1 class="title text-center">Stories</h1>
+          <div class="row mt-5">
+            <div class="col-md-12 ml-auto mr-auto">
+              <div *ngFor="let story of stories">
+                <div class="row collections">
+                  <div class="col-md-12">
+                    <div class="card" style="height: 64rem;">
+                      <img class="card-img-top" src="assets/img/bg1.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">{{story.title}}</h5>
+                        <p class="card-text" *ngIf="story.text != null &&  story.text.length >= 200">  {{truncateDescription(story.text)}} ... </p>
+                        <p class="card-text" *ngIf="story.text != null &&  story.text.length < 200">  {{story.text}}  </p>
+                        <button class="btn btn-primary btn-round btn-read" (click)="goToViewStory(story.id)">Read more</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

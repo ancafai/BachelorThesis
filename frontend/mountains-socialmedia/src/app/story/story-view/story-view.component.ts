@@ -13,6 +13,7 @@ export class StoryViewComponent implements OnInit {
 
   story: Story = new Story('', '', '', '', '', null, null, null);
   userFound: string;
+  photos: Array<string> = new Array<string>();
 
   constructor(private activatedRoute: ActivatedRoute, private storyService: StoryService, private userService: UserService) { }
 
@@ -25,6 +26,9 @@ export class StoryViewComponent implements OnInit {
     this.storyService.getById(this.activatedRoute.snapshot.params.storyid)
       .subscribe( storyFound => {
           this.story = storyFound;
+          for (const picture of storyFound.pictures) {
+          this.photos.push('data:image/jpg;base64,' + picture);
+          }
         }
       );
   }
@@ -32,8 +36,10 @@ export class StoryViewComponent implements OnInit {
   // deadlock
   getUserName() {
     this.storyService.getUserByStoryId(this.activatedRoute.snapshot.params.storyid)
-      .subscribe( user =>
-        this.userFound = user.username
+      .subscribe( user => {
+          this.userFound = user.username;
+
+        }
       );
   }
 

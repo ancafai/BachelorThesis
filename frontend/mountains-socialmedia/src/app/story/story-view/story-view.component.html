@@ -12,22 +12,20 @@
       </div>
     </div>
 
-    <div class="d-flex flex-row mt-5">
+    <div class="d-flex flex-row mt-5" *ngFor="let pic of photos; let i = index">
+      <div class="row collections" *ngIf="i%4===0 && photos != null">
       <div class="d-flex flex-column ">
-        <img src="assets/img/bg1.jpg" class="img-fluid">
-        <img src="assets/img/bg3.jpg" class="img-fluid">
+        <img src="{{photos[i]}}" class="img-fluid">
       </div>
-      <div class="d-flex flex-column ">
-        <img src="assets/img/ryan.jpg" class="img-fluid">
-        <img src="assets/img/bg5.jpg" class="img-fluid">
+      <div *ngIf="photos[i + 1]" class="d-flex flex-column ">
+        <img src="{{photos[i+1]}}" class="img-fluid">
       </div>
-      <div class="d-flex flex-column">
-        <img src="assets/img/bg6.jpg" class="img-fluid">
-        <img src="assets/img/ryan.jpg" class="img-fluid">
+      <div *ngIf="photos[i + 2]" class="d-flex flex-column">
+        <img src="{{photos[i+2]}}" class="img-fluid">
       </div>
-      <div class="d-flex flex-column">
-        <img src="assets/img/bg8.jpg" class="img-fluid">
-        <img src="assets/img/bg11.jpg" class="img-fluid">
+        <div *ngIf="photos[i + 3]" class="d-flex flex-column">
+          <img src="{{photos[i+3]}}" class="img-fluid">
+        </div>
       </div>
     </div>
 

@@ -26,6 +26,10 @@ public interface MountainService {
 
     List<StoryDto> findAllStories();
 
+    List<StoryDto> findStoriesUserMountain(String userId, String mountainId);
+
+    String getColorRegion(String userId, String mountainId);
+
     UserDto getUserByStoryId(String storyId);
 
     MountainDto addStory(String mountainId, NewStoryDto newStoryDto);

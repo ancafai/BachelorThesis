@@ -43,6 +43,19 @@ export class StoryService {
       .catch(this.handleError);
   }
 
+  getStoriesUserMountain(userId: string, mountainId: string): Observable<Story[]> {
+
+    return this.http.get(this.storiesUrl + '/mountain/getstoriesusermountain/' + userId + '/' + mountainId)
+      .map(this.extractStories)
+      .catch(this.handleError);
+  }
+
+
+  getColorRegion(userId: string, mountainId: string): Observable<string> {
+    return this.http.get(this.storiesUrl + '/mountain/getcolorregion/' + userId + '/' + mountainId)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
 
   getAllStories():  Observable<Story[]> {
 
@@ -80,6 +93,20 @@ export class StoryService {
       .catch(this.handleError);
   }
 
+  updateStoryWithFile(url, formData: FormData): Observable <any> {
+    return this.http.put(this.storiesUrl + url, formData)
+      .map(response => response)
+      .catch(error => Observable.throw(error));
+  }
+
+
+  deleteStory(storyId: string): Observable<void> {
+    return this.http.delete(this.storiesUrl + '/mountain/deletestory/' + storyId)
+      .map(() => null)
+      .catch(this.handleError);
+
+  }
+
   private extractStories(res: Response) {
     const body = res.json().storyDtoList || {};
     return body;
@@ -90,6 +117,14 @@ export class StoryService {
     return body || {};
   }
 
+  private extractData(res: Response) {
+    const body = res.text();  // If response is a JSON use json()
+    if (body) {
+      return body || {};
+    } else {
+      return {};
+    }
+  }
 
 
   private handleError(error: Response | any) {

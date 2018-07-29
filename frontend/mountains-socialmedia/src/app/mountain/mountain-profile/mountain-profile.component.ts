@@ -5,6 +5,8 @@ import {environment} from "../../../environments/environment";
 import {Router} from "@angular/router";
 import {UserService} from "../../profile/shared/user.service";
 import {MountainService} from "../shared/mountain.service";
+import {StoryService} from "../../story/shared/story.service";
+import set = Reflect.set;
 
 
 const apiToken = environment.MAPBOX_API_KEY;
@@ -24,8 +26,9 @@ const defaultZoom = 8;
 export class MountainProfileComponent implements OnInit {
 
   mapType = 'streets';
+  colorRegion: string;
 
-  constructor(private mountainService: MountainService, private userService: UserService, private router: Router) { }
+  constructor(private mountainService: MountainService, private userService: UserService, private storyService: StoryService, private router: Router) { }
 
   ngOnInit() {
     this.plotMap();
@@ -45,6 +48,7 @@ export class MountainProfileComponent implements OnInit {
         }
       );
   }
+
 
   plotMap() {
     const myStyle = {
@@ -149,35 +153,74 @@ export class MountainProfileComponent implements OnInit {
       inputs[i].onclick = switchLayer;
     }
 
+    const setStyle = () => {
+
+      geoJsonLayer.eachLayer((layerNew) => {
+        this.mountainService.findByName(layerNew.feature.properties.DENUMIRE)
+          .subscribe( mountain => {
+            this.storyService.getColorRegion(localStorage.getItem('userId'), mountain.id)
+              .subscribe( color => {
+                layerNew.setStyle({
+                  weight: 2, opacity: 0.5, fillOpacity: 0.5, color: color
+                });
+              });
+          });
+
+        });
+
+
+
+    };
+
 
     const customLayer = L.geoJson(null, {
 
-      style:
-        function (feature) {
-          return {weight: 2, opacity: 0.5, fillOpacity: 0.5, color: '#2f1e1e'};
-        }
-
     });
+
 
 
     const geoJsonLayer = omnivore.geojson('../../../assets/mountains.geojson', null, customLayer)
       .on('ready', function () {
         map.fitBounds(geoJsonLayer.getBounds());
+        setStyle();
       }).addTo(map);
+
+
+
 
     const onMountainClick = (e) => {
 
       const mountainFound: Observable<Mountain> = this.mountainService.findByName(e.layer.feature.properties.DENUMIRE);
       mountainFound.subscribe(mountain => {
         console.log('id: ', mountain.id);
-        this.router.navigateByUrl('/story/getstoriesofmountain/' + mountain.id);
+        console.log('name: ', mountain.name);
+        this.router.navigateByUrl('/story/getstoriesofmountainuser/' + localStorage.getItem('userId') + '/' + mountain.id);
         // e.layer.setStyle({weight: 2, opacity: 0.5, fillOpacity: 0.5, color: e.layer.feature.properties.color});
       });
 
 
     };
 
+
     geoJsonLayer.on('click', onMountainClick);
+
+    geoJsonLayer.on('mouseover', function(e) {
+
+      e.layer.setStyle({
+        fillOpacity: 0.7
+      });
+    const popup = L.popup()
+        .setLatLng(e.latlng)
+        .setContent(e.layer.feature.properties.DENUMIRE)
+        .openOn(map);
+    });
+
+    geoJsonLayer.on('mouseout', function(e) {
+      e.layer.setStyle({
+        fillOpacity: 0.5
+      });
+    });
+
 
 
   }

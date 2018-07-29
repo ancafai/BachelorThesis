@@ -18,6 +18,8 @@ export class RegisterComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
+    localStorage.setItem('username', '');
+    localStorage.setItem('userId', '');
   }
 
   register() {

@@ -3,7 +3,7 @@ import {NewUser} from './newUser.model';
 export class User extends NewUser {
   public id: string;
   public points: number;
-  public picture: string;
+  public profilePicture: string;
   public mapType: string;
   public description: string;
 
@@ -14,7 +14,7 @@ export class User extends NewUser {
               password?: string,
               id?: string,
               points?: number,
-              picture?: string,
+              profilePicture?: string,
               description?: string,
               mapType?: string
   ) {
@@ -23,6 +23,6 @@ export class User extends NewUser {
     this.points = points;
     this.mapType = mapType;
     this.description = description;
-    this.picture = picture;
+    this.profilePicture = profilePicture;
   }
 }

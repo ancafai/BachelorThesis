@@ -11,10 +11,10 @@
             <div *ngFor="let story of stories;let i = index">
               <div class="row collections" *ngIf="i%4===0">
                 <div class="col-md-3">
-                  <div class="card" style="height: 35rem;">
+                  <div class="card" style="height: 32rem;">
                     <img class="card-img-top" src="assets/img/bg1.jpg" alt="Card image cap">
                     <div class="card-body">
-                      <h4 class="card-title">{{stories[i].title}}</h4>
+                      <h5 class="card-title">{{stories[i].title}}</h5>
                       <p class="card-text" *ngIf="stories[i].text != null &&  stories[i].text.length >= 200">  {{truncateDescription(stories[i].text)}} ... </p>
                       <p class="card-text" *ngIf="stories[i].text != null &&  stories[i].text.length < 200">  {{stories[i].text}}  </p>
                       <button class="btn btn-primary btn-round btn-read" (click)="goToViewStory(stories[i].id)">Read more</button>
@@ -22,7 +22,7 @@
                   </div>
                 </div>
                 <div *ngIf="stories[i + 1]" class="col-md-3">
-                  <div class="card" style="height: 30rem;">
+                  <div class="card" style="height: 32rem;">
                     <img class="card-img-top" src="assets/img/bg1.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">{{stories[i+1].title}}</h5>
@@ -34,7 +34,7 @@
                   </div>
                 </div>
                 <div *ngIf="stories[i + 2]" class="col-md-3">
-                  <div class="card" style="height: 30rem;">
+                  <div class="card" style="height: 32rem;">
                     <img class="card-img-top" src="assets/img/bg1.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">{{stories[i+2].title}}</h5>
@@ -46,7 +46,7 @@
                   </div>
                 </div>
                 <div *ngIf="stories[i + 3]" class="col-md-3">
-                  <div class="card" style="height: 30rem;">
+                  <div class="card" style="height: 32rem;">
                     <img class="card-img-top" src="assets/img/bg1.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">{{stories[i+3].title}}</h5>
