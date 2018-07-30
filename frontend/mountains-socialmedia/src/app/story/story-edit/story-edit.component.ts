@@ -51,6 +51,7 @@ export class StoryEditComponent implements OnInit {
           const fileInput: File = this.fileList[i];
           formData.append('files', fileInput, fileInput.name);
       }
+      this.story.pictures = null;
       formData.append('story', new Blob([JSON.stringify(this.story)], {
             type: 'application/json'
       }));
@@ -64,6 +65,7 @@ export class StoryEditComponent implements OnInit {
 
       }  else {
       const formData: FormData = new FormData();
+      this.story.pictures = null;
       formData.append('story', new Blob([JSON.stringify(this.story)], {
         type: 'application/json'
       }));
@@ -80,7 +82,7 @@ export class StoryEditComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigateByUrl('/user/profile');
+    this.router.navigateByUrl('/user/profile/' + localStorage.getItem('userId'));
   }
 
   deletePhoto() {

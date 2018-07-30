@@ -27,8 +27,8 @@ export class UserService {
       .catch(this.handleError);
   }
 
-  getUser(): Observable<User> {
-    return this.http.get( this.usersUrl + '/user/getbyusername/' + localStorage.getItem('username'))
+  getUser(idUser: string): Observable<User> {
+    return this.http.get( this.usersUrl + '/user/getbyid/' + idUser)
       .map(this.extractDataUser)
       .catch(this.handleError);
   }

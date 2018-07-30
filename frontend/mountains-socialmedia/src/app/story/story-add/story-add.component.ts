@@ -29,7 +29,7 @@ export class StoryAddComponent implements OnInit {
     this.story.userId = localStorage.getItem('userId');
     this.storyService.createStory('/mountain/addstory/' + this.idMountain, this.story)
       .subscribe(data => {
-        this.router.navigateByUrl('/story/getall');
+        this.router.navigateByUrl('/user/profile/' + localStorage.getItem('userId'));
       });
   }
 

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MountainComponent } from './mountain.component';
+import { MountainProfileComponent } from './mountain-profile-owner.component';
 
-describe('MountainComponent', () => {
-  let component: MountainComponent;
-  let fixture: ComponentFixture<MountainComponent>;
+describe('MountainProfileComponent', () => {
+  let component: MountainProfileComponent;
+  let fixture: ComponentFixture<MountainProfileComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MountainComponent ]
+      declarations: [ MountainProfileComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MountainComponent);
+    fixture = TestBed.createComponent(MountainProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

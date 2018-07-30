@@ -26,14 +26,15 @@ export class StoryViewComponent implements OnInit {
     this.storyService.getById(this.activatedRoute.snapshot.params.storyid)
       .subscribe( storyFound => {
           this.story = storyFound;
-          for (const picture of storyFound.pictures) {
-          this.photos.push('data:image/jpg;base64,' + picture);
+          if (storyFound.pictures != null) {
+            for (const picture of storyFound.pictures) {
+              this.photos.push('data:image/jpg;base64,' + picture);
+            }
           }
         }
       );
   }
 
-  // deadlock
   getUserName() {
     this.storyService.getUserByStoryId(this.activatedRoute.snapshot.params.storyid)
       .subscribe( user => {

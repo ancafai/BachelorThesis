@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {Mountain} from "../shared/mountain.model";
 import {environment} from "../../../environments/environment";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../../profile/shared/user.service";
 import {MountainService} from "../shared/mountain.service";
 import {StoryService} from "../../story/shared/story.service";
 import set = Reflect.set;
+import {User} from "../../profile/shared/user.model";
 
 
 const apiToken = environment.MAPBOX_API_KEY;
@@ -19,25 +20,38 @@ const defaultZoom = 8;
 
 @Component({
   selector: 'app-mountain-profile',
-  templateUrl: './mountain-profile.component.html',
-  styleUrls: ['./mountain-profile.component.css']
+  templateUrl: './mountain-profile-owner.component.html',
+  styleUrls: ['./mountain-profile-owner.component.css']
 })
 
-export class MountainProfileComponent implements OnInit {
+export class MountainProfileOwnerComponent implements OnInit {
 
   mapType = 'streets';
   colorRegion: string;
-
-  constructor(private mountainService: MountainService, private userService: UserService, private storyService: StoryService, private router: Router) { }
+  user: User = new User();
+  constructor(private activatedRoute: ActivatedRoute, private mountainService: MountainService, private userService: UserService, private storyService: StoryService, private router: Router) { }
 
   ngOnInit() {
+    this.getUser(this.activatedRoute.snapshot.params.userId);
     this.plotMap();
   }
+
+  getUser(idUser: string): void {
+
+    this.userService.getUser(idUser)
+      .subscribe(
+        user => {
+          this.user = user;
+        }
+      );
+  }
+
+
 
 
   updateMapType() {
     console.log('BEFORE UPDATE' + this.mapType);
-    this.userService.findByName(localStorage.getItem('username'))
+    this.userService.findByName(this.user.username)
       .subscribe( userFound => {
         userFound.mapType = this.mapType;
         localStorage.setItem('mapType', this.mapType);
@@ -59,7 +73,7 @@ export class MountainProfileComponent implements OnInit {
     const map = L.map('map').setView(defaultCoords, defaultZoom);
     map.maxZoom = 100;
 
-    const listStyles = ['mapbox.dark', 'mapbox.streets', 'mapbox.light', 'mapbox.comic', 'mapbox.satellite'];
+    const listStyles = ['mapbox.outdoors', 'mapbox.streets', 'mapbox.light', 'mapbox.comic', 'mapbox.streets-satellite', 'mapbox.pencil', 'mapbox.pirates', 'mapbox.high-contrast'];
 
     const mapLayer = L.tileLayer('https://api.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
@@ -69,7 +83,7 @@ export class MountainProfileComponent implements OnInit {
       accessToken: apiToken
     }).addTo(map);
 
-    const dark = L.tileLayer('https://api.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    const outdoors = L.tileLayer('https://api.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
       '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
       id: listStyles[0],
@@ -110,6 +124,27 @@ export class MountainProfileComponent implements OnInit {
       accessToken: apiToken
     });
 
+    const pencil = L.tileLayer('https://api.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      id: listStyles[5],
+      maxZoom: 15,
+      accessToken: apiToken
+    });
+    const pirates = L.tileLayer('https://api.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      id: listStyles[6],
+      maxZoom: 15,
+      accessToken: apiToken
+    });
+    const highcontrast = L.tileLayer('https://api.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      id: listStyles[7],
+      maxZoom: 15,
+      accessToken: apiToken
+    });
 
 
     const layerList = document.getElementById('menu');
@@ -124,13 +159,11 @@ export class MountainProfileComponent implements OnInit {
         this.mapType = 'streets';
       }
 
-      if (layerId.toString() === 'dark') {
-        dark.addTo(map);
-        dark.bringToFront();
-        this.mapType = 'dark';
+      if (layerId.toString() === 'outdoors') {
+        outdoors.addTo(map);
+        outdoors.bringToFront();
+        this.mapType = 'outdoors';
       }
-
-
       if (layerId.toString() === 'light') {
         light.addTo(map);
         light.bringToFront();
@@ -145,6 +178,21 @@ export class MountainProfileComponent implements OnInit {
         satellite.addTo(map);
         satellite.bringToFront();
         this.mapType = 'satellite';
+      }
+      if (layerId.toString() === 'pencil') {
+        pencil.addTo(map);
+        pencil.bringToFront();
+        this.mapType = 'pencil';
+      }
+      if (layerId.toString() === 'pirates') {
+        pirates.addTo(map);
+        pirates.bringToFront();
+        this.mapType = 'pirates';
+      }
+      if (layerId.toString() === 'high-contrast') {
+        highcontrast.addTo(map);
+        highcontrast.bringToFront();
+        this.mapType = 'high-contrast';
       }
       console.log(layerId);
     };
@@ -194,7 +242,7 @@ export class MountainProfileComponent implements OnInit {
       mountainFound.subscribe(mountain => {
         console.log('id: ', mountain.id);
         console.log('name: ', mountain.name);
-        this.router.navigateByUrl('/story/getstoriesofmountainuser/' + localStorage.getItem('userId') + '/' + mountain.id);
+        this.router.navigateByUrl('/story/getstoriesofmountainuser/' + this.user.id + '/' + mountain.id);
         // e.layer.setStyle({weight: 2, opacity: 0.5, fillOpacity: 0.5, color: e.layer.feature.properties.color});
       });
 

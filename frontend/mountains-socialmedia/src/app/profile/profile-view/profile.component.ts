@@ -7,7 +7,7 @@ import 'rxjs/add/operator/toPromise';
 import {Observable} from 'rxjs/Observable';
 import {Story} from '../../story/shared/story.model';
 import {StoryService} from '../../story/shared/story.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {DomSanitizer} from "@angular/platform-browser";
 
 
@@ -27,18 +27,19 @@ export class ProfileComponent implements OnInit {
   photo: string;
 
 
-  constructor( private userService: UserService, private storyService: StoryService, private router: Router, private domSanitizer: DomSanitizer ) { }
+  constructor( private activatedRoute: ActivatedRoute, private userService: UserService, private storyService: StoryService, private router: Router, private domSanitizer: DomSanitizer ) { }
 
   ngOnInit(): void {
    // this.getUsers();
-    this.getUser();
-    this.getStories();
+    this.getUser(this.activatedRoute.snapshot.params.userId);
+    this.getStories(this.activatedRoute.snapshot.params.userId);
+
 
   }
 
-  getUser(): void {
+  getUser(idUser: string): void {
 
-    this.userService.getUser()
+    this.userService.getUser(idUser)
       .subscribe(
         user => {
           this.user = user;
@@ -47,17 +48,15 @@ export class ProfileComponent implements OnInit {
       );
   }
 
-  getUsers(): void {
-
-    this.userService.getUsers()
-      .subscribe(
-        users =>
-          this.users = users
-      );
+  isOwner(idUser: string): boolean {
+    if (idUser === localStorage.getItem('userId')) {
+      return true;
+    }
+    return false;
   }
 
-  getStories(): void {
-      this.userService.findByName(localStorage.getItem('username'))
+  getStories(idUser: string): void {
+      this.userService.findById(idUser)
         .subscribe(
           userStories => {
             this.storyService.getStoriesUser(userStories.id)
@@ -79,7 +78,11 @@ export class ProfileComponent implements OnInit {
       return 'data:image/jpg;base64,' + image;
     }
   goToMap() {
-    this.router.navigateByUrl('/mountain/getalluser');
+    if (this.isOwner(this.user.id)) {
+      this.router.navigateByUrl('/mountain/getalluserowner/' + this.user.id);
+    } else {
+      this.router.navigateByUrl('mountain/getalluservisitor/' + this.user.id + '/' + this.user.mapType);
+    }
   }
 
   goToAddStory() {
@@ -98,7 +101,7 @@ export class ProfileComponent implements OnInit {
     if (confirm('Are you sure you want to delete this story?')) {
       this.storyService.deleteStory(storyId).subscribe(data => {
         this.storyService.getAllStories();
-        this.getStories();
+        this.getStories(this.user.id);
       });
     }
   }

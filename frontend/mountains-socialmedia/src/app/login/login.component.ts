@@ -39,13 +39,17 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('username', this.username);
         this.userService.findByName(this.username)
           .subscribe(userFound => {
-            localStorage.setItem('mapType', userFound.mapType);
+            if (userFound.mapType != null) {
+              localStorage.setItem('mapType', userFound.mapType);
+            } else {
+              localStorage.setItem('mapType', 'streets');
+            }
             localStorage.setItem('userId', userFound.id);
             }
           );
 
         console.log('local storage is: ' + localStorage.getItem('username'));
-        this.router.navigateByUrl('/user/profile');
+        this.router.navigateByUrl('/mountain/getall');
       }
     });
   }

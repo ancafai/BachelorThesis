@@ -12,9 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { ProfileComponent } from './profile/profile-view/profile.component';
 import {UserService} from './profile/shared/user.service';
-import { MountainComponent } from './mountain/mountain.component';
 import { MountainHomeComponent } from './mountain/mountain-home/mountain-home.component';
-import {StoryAllComponent} from './story/story-all/story-all.component';
 import {StoryService} from './story/shared/story.service';
 import { StoryMountainComponent } from './story/story-mountain/story-mountain.component';
 import { StoryAddComponent } from './story/story-add/story-add.component';
@@ -23,16 +21,17 @@ import {AngularMaterialModule} from './angular-material.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './shared/navbar.component';
 import { StoryEditComponent } from './story/story-edit/story-edit.component';
-import { MountainProfileComponent } from './mountain/mountain-profile/mountain-profile.component';
+import { MountainProfileOwnerComponent } from './mountain/mountain-profile-owner/mountain-profile-owner.component';
 import {MountainService} from './mountain/shared/mountain.service';
 import { StoryViewComponent } from './story/story-view/story-view.component';
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 import { StoryMountainUserComponent } from './story/story-mountain-user/story-mountain-user.component';
+import { MountainProfileVisitorComponent } from './mountain/mountain-profile-visitor/mountain-profile-visitor.component';
 
 
 const appRoutes: Routes = [
   {
-    path: 'user/profile',
+    path: 'user/profile/:userId',
     component: ProfileComponent,
     data: { title: 'Users List' }
   },
@@ -42,14 +41,14 @@ const appRoutes: Routes = [
     data: { title: 'Mountains List' }
   },
   {
-    path: 'mountain/getalluser',
-    component: MountainProfileComponent,
+    path: 'mountain/getalluserowner/:userId',
+    component: MountainProfileOwnerComponent,
     data: { title: 'Mountains List' }
   },
   {
-    path: 'story/getall',
-    component: StoryAllComponent,
-    data: { title: 'Stories List' }
+    path: 'mountain/getalluservisitor/:userId/:mapType',
+    component: MountainProfileVisitorComponent,
+    data: { title: 'Mountains List' }
   },
   {
     path: 'story/getstoriesofmountain/:idMountain',
@@ -87,7 +86,7 @@ const appRoutes: Routes = [
     component: StoryViewComponent,
     data: { title: 'Story view' }
   },
-  { path: 'user/profile/edit',
+  { path: 'user/profileedit',
     component: ProfileEditComponent,
     data: { title: 'Profile edit' }
   },
@@ -102,18 +101,17 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     ProfileComponent,
-    MountainComponent,
     MountainHomeComponent,
-    StoryAllComponent,
     StoryMountainComponent,
     StoryAddComponent,
     RegisterComponent,
     NavbarComponent,
     StoryEditComponent,
-    MountainProfileComponent,
+    MountainProfileOwnerComponent,
     StoryViewComponent,
     ProfileEditComponent,
     StoryMountainUserComponent,
+    MountainProfileVisitorComponent,
   ],
   imports: [
     BrowserModule,

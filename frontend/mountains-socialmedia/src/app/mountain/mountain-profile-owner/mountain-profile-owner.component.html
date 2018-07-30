@@ -2,6 +2,7 @@
   <div class="col-md-9">
     <h2 class="heading">Map</h2>
     <hr/>
+
     <div id='menu'>
       <input id='streets' type='radio' name='rtoggle' value='streets'>
       <label for='streets'>streets</label>
@@ -9,10 +10,16 @@
       <label for='comic'>comic</label>
       <input id='light' type='radio' name='rtoggle' value='light'>
       <label for='light'>light</label>
-      <input id='dark' type='radio' name='rtoggle' value='dark'>
-      <label for='dark'>dark</label>
+      <input id='outdoors' type='radio' name='rtoggle' value='outdoors'>
+      <label for='outdoors'>outdoors</label>
       <input id='satellite' type='radio' name='rtoggle' value='satellite'>
       <label for='satellite'>satellite</label>
+      <input id='pencil' type='radio' name='rtoggle' value='pencil'>
+      <label for='pencil'>pencil</label>
+      <input id='pirates' type='radio' name='rtoggle' value='pirates'>
+      <label for='pirates'>pirates</label>
+      <input id='high-contrast' type='radio' name='rtoggle' value='high-contrast'>
+      <label for='high-contrast'>high-contrast</label>
       <button (click)="updateMapType()" class="btn btn-primary btn-round float-right"> Save style</button>
     </div>
     <hr/>

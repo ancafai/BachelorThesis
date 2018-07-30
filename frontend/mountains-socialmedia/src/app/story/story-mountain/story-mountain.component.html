@@ -1,13 +1,13 @@
-<div class="wrapper">
 <div class="section">
   <div class="container">
 
     <div class="row"></div>
     <div class="row">
       <div class="mt-5">
+        <div class="col-md-12">
         <h1 class="title text-center">Stories</h1>
         <div class="row mt-5">
-          <div class="col-md-12 ml-auto mr-auto">
+            <h6 class="text-center" *ngIf="stories.length == 0"> There are no stories yet for this mountain</h6>
             <div *ngFor="let story of stories;let i = index">
               <div class="row collections" *ngIf="i%4===0">
                 <div class="col-md-3">
@@ -64,5 +64,5 @@
       </div>
     </div>
   </div>
-</div>
+
 </div>

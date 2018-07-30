@@ -4,6 +4,8 @@ import {MountainService} from '../shared/mountain.service';
 import {Observable} from 'rxjs/Observable';
 import {Mountain} from '../shared/mountain.model';
 import {environment} from '../../../environments/environment';
+import {StoryService} from "../../story/shared/story.service";
+import {Story} from "../../story/shared/story.model";
 
 const apiToken = environment.MAPBOX_API_KEY;
 declare var omnivore: any;
@@ -23,13 +25,38 @@ const defaultZoom = 8;
 export class MountainHomeComponent implements OnInit {
 
   mountain = 'Map';
+  stories: Story[];
+  username: string;
 
-  constructor(private mountainService: MountainService, private router: Router) { }
+  constructor(private mountainService: MountainService, private storyService: StoryService, private router: Router) { }
 
   ngOnInit() {
 
     this.plotMap();
+    this.getStories();
   }
+
+  getStories(): void {
+    this.storyService.getAllStories()
+            .subscribe(
+              storiesFound => {
+                this.stories = storiesFound;
+              }
+            );
+  }
+
+  truncateDescription(descr: string): string {
+    return descr.slice(0, 310);
+  }
+
+  prelucrateImage(image: string): string {
+    return 'data:image/jpg;base64,' + image;
+  }
+
+  goToViewStory(storyId: string) {
+    this.router.navigateByUrl('story/view/' + storyId);
+  }
+
 
   plotMap() {
     const myStyle = {

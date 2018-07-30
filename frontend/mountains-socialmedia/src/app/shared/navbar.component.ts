@@ -18,6 +18,11 @@ export class NavbarComponent implements OnInit {
     const navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
   }
+
+  getUserId(): string {
+    return localStorage.getItem('userId');
+  }
+
   sidebarOpen() {
     const toggleButton = this.toggleButton;
     const html = document.getElementsByTagName('html')[0];
@@ -46,11 +51,10 @@ export class NavbarComponent implements OnInit {
   };
 
   isDocumentation() {
-    var titlee = this.location.prepareExternalUrl(this.location.path());
-    if( titlee === '/documentation' ) {
+    const titlee = this.location.prepareExternalUrl(this.location.path());
+    if ( titlee === '/documentation' ) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }

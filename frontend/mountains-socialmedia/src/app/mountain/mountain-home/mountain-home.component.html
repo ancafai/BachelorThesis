@@ -1,9 +1,77 @@
+<div class="section">
+<div class="container">
 <div class="row row-map">
-  <div class="col-md-8">
-    <hr/><hr/> <hr/><hr/>
+  <div class="col-md-12">
+    <br><br> <br><br>
     <h5 class="heading text-center">{{mountain}}</h5>
     <hr/>
     <div id="map"></div>
   </div>
+</div>
 
+  <div class="row">
+    <div class="col-md-12 mt-5">
+      <h4 class="title text-center">Read their stories</h4>
+      <div class="row mt-5">
+        <div class="col-md-12 ml-auto mr-auto">
+          <div *ngFor="let story of stories;let i = index">
+            <div class="row collections" *ngIf="i%3===0">
+              <div class="col-md-4">
+                <div class="card" style="height: 35rem;">
+                  <img class="card-img-top" *ngIf="stories[i].pictures != null" src="{{prelucrateImage(stories[i].pictures[0])}}" alt="Card image cap">
+                  <img class="card-img-top" *ngIf="stories[i].pictures == null" src="assets/img/default.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">{{stories[i].title}}</h5>
+
+                    <p class="card-text" *ngIf="stories[i].text != null &&  stories[i].text.length >= 100">  {{truncateDescription(stories[i].text)}} ... </p>
+                    <p class="card-text" *ngIf="stories[i].text != null &&  stories[i].text.length < 100">  {{stories[i].text}}  </p>
+                    <div class="row-fluid">
+                      <button class="btn btn-primary btn-round btn-read" (click)="goToViewStory(stories[i].id)">Read more</button>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="stories[i + 1]" class="col-md-4">
+                <div class="card" style="height: 35rem;">
+                  <img class="card-img-top" *ngIf="stories[i+1].pictures != null" src="{{prelucrateImage(stories[i+1].pictures[0])}}" alt="Card image cap">
+                  <img class="card-img-top" *ngIf="stories[i+1].pictures == null" src="assets/img/default.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">{{stories[i+1].title}}</h5>
+
+                    <p class="card-text" *ngIf="stories[i+1].text != null &&  stories[i+1].text.length >= 100">  {{truncateDescription(stories[i+1].text)}} ... </p>
+                    <p class="card-text" *ngIf="stories[i+1].text != null &&  stories[i+1].text.length < 100">  {{stories[i+1].text}} </p>
+                    <div class="row-fluid">
+                      <button class="btn btn-primary btn-round btn-read" (click)="goToViewStory(stories[i+1].id)">Read more</button>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="stories[i + 2]" class="col-md-4">
+                <div class="card" style="height: 35rem;">
+                  <img class="card-img-top" *ngIf="stories[i+2].pictures != null" src="{{prelucrateImage(stories[i+2].pictures[0])}}" alt="Card image cap">
+                  <img class="card-img-top" *ngIf="stories[i+2].pictures == null" src="assets/img/default.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">{{stories[i+2].title}}</h5>
+
+                    <p class="card-text" *ngIf="stories[i+2].text != null &&  stories[i+2].text.length >= 100">  {{truncateDescription(stories[i+2].text)}} ... </p>
+                    <p class="card-text" *ngIf="stories[i+2].text != null &&  stories[i+2].text.length < 100">  {{stories[i+2].text}} </p>
+                    <div class="row-fluid">
+                      <button class="btn btn-primary btn-round btn-read" (click)="goToViewStory(stories[i+2].id)">Read more</button>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>

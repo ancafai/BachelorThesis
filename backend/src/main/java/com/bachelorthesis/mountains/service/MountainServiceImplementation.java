@@ -35,6 +35,9 @@ public class MountainServiceImplementation implements MountainService {
     private UserRepository userRepository;
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     private UserMapper userMapper;
 
     @Autowired
@@ -42,7 +45,6 @@ public class MountainServiceImplementation implements MountainService {
 
     @Autowired
     private NewStoryMapper newStoryMapper;
-
 
 
 
@@ -182,6 +184,10 @@ public class MountainServiceImplementation implements MountainService {
     public MountainDto addStory(String mountainId, NewStoryDto newStoryDto) {
         Mountain mountainAddStory = mountainRepository.findById(mountainId).get();
 
+        User userUpdateScore = userRepository.findById(newStoryDto.getUserId()).get();
+        userUpdateScore.setPoints(userUpdateScore.getPoints() + 10);
+        userService.update(userMapper.toExternal(userUpdateScore));
+
         mountainAddStory.addStory(newStoryMapper.toInternal(newStoryDto));
         Mountain mountainUpdated = mountainRepository.save(mountainAddStory);
         return mountainMapper.toExternal(mountainUpdated);
@@ -196,6 +202,11 @@ public class MountainServiceImplementation implements MountainService {
         for (MountainDto m : mountains) {
             for (Story st : m.getStories()) {
                 if (st.getId().equals(storyId)) {
+                    StoryDto storyDto = getStoryById(storyId);
+                    User userUpdateScore = userRepository.findById(storyDto.getUserId()).get();
+                    userUpdateScore.setPoints(userUpdateScore.getPoints() - 10);
+                    userService.update(userMapper.toExternal(userUpdateScore));
+
                     mountainMapper.toInternal(m).deleteStory(storyId);
                     Mountain mountainUpdated = mountainRepository.save(mountainMapper.toInternal(m));
                     return mountainMapper.toExternal(mountainUpdated);
@@ -212,7 +223,15 @@ public class MountainServiceImplementation implements MountainService {
         for (MountainDto m : mountains) {
             for (Story st : m.getStories()) {
                 if (st.getId().equals(storyDto.getId())) {
-                    mountainMapper.toInternal(m).updateStory(storyMapper.toInternal(storyDto));
+                    if (storyDto.getPictures() == null) {
+                        StoryDto newStoryDto = getStoryById(storyDto.getId());
+                        List<byte[]> pics = newStoryDto.getPictures();
+                        newStoryDto = storyDto;
+                        newStoryDto.setPictures(pics);
+                        mountainMapper.toInternal(m).updateStory(storyMapper.toInternal(newStoryDto));
+                    } else {
+                        mountainMapper.toInternal(m).updateStory(storyMapper.toInternal(storyDto));
+                    }
                     Mountain mountainUpdated = mountainRepository.save(mountainMapper.toInternal(m));
                     return mountainMapper.toExternal(mountainUpdated);
                 }
