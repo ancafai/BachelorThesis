@@ -31,11 +31,8 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public NewUserDto create(NewUserDto newUserDto) {
-     //   if (userRepository.findByUsername(newUserDto.getUsername()) == null) {
             User createdUser = newUserMapper.toInternal(newUserDto);
             return newUserMapper.toExternal(userRepository.save(createdUser));
-       // }
-      //  return null;
     }
 
 

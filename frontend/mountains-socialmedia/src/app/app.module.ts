@@ -33,7 +33,7 @@ const appRoutes: Routes = [
   {
     path: 'user/profile/:userId',
     component: ProfileComponent,
-    data: { title: 'Users List' }
+    data: { title: 'User Profile' }
   },
   {
     path: 'mountain/getall',

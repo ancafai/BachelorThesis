@@ -37,12 +37,8 @@ public class MountainsApplication {
 
 			JsonNode rootNode = objectMapper.readTree(jsonData);
 			for (JsonNode i : rootNode) {
-			//	JsonNode name = i.path("firstName");
-			//	NewUserDto createdUser = new NewUserDto( name.asText() ,"Lname", "mail",  "user", "pass");
-			//	userService.create(createdUser);
 				JsonNode props = i.path("properties");
 				JsonNode denumire = props.path("DENUMIRE");
-
 				JsonNode geom = i.path("geometry");
 				JsonNode coords = geom.path("coordinates");
 
@@ -57,23 +53,14 @@ public class MountainsApplication {
 								ArrayList<Double> coordinates = new ArrayList<Double>();
 								coordinates.add(objNode3.get(0).asDouble());
 								coordinates.add(objNode3.get(1).asDouble());
-
 								listCoords.add(coordinates);
-
-
 							}
 						}
-
 					}
 				}
 				List<Story> emptyStoryList = new ArrayList<Story>();
 				NewMountainDto createdMountain = new NewMountainDto(denumire.asText(), listCoords, emptyStoryList);
 				mountainService.create(createdMountain);
-
-
-
-
-
 
 			}
 
