@@ -19,7 +19,7 @@ import { StoryAddComponent } from './story/story-add/story-add.component';
 import { RegisterComponent } from './register/register.component';
 import {AngularMaterialModule} from './angular-material.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { NavbarComponent } from './shared/navbar.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 import { StoryEditComponent } from './story/story-edit/story-edit.component';
 import { MountainProfileOwnerComponent } from './mountain/mountain-profile-owner/mountain-profile-owner.component';
 import {MountainService} from './mountain/shared/mountain.service';

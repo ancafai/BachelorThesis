@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {NavbarComponent} from './shared/navbar.component';
+import {NavbarComponent} from './shared/navbar/navbar.component';
 import {Location} from '@angular/common';
 
 @Component({

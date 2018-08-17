@@ -154,6 +154,12 @@ public class MountainController {
 
     }
 
+    @RequestMapping (value = "getallstories/page/{currentPage}", method = RequestMethod.GET)
+    public StoryDtoList getPageStories(@PathVariable int currentPage) {
+        StoryDtoList storyDtoList = new StoryDtoList( mountainService.getPager(currentPage, 12));
+        return storyDtoList;
+    }
+
 
 
 

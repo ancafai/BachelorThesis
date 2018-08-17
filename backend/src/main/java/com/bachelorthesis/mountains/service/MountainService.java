@@ -40,5 +40,7 @@ public interface MountainService {
 
     StoryDto getStoryById(String storyId);
 
+    List<StoryDto> getPager(int currentPage, int pageSize);
+
 
 }

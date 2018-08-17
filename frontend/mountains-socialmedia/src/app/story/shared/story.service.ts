@@ -57,6 +57,12 @@ export class StoryService {
       .catch(this.handleError);
   }
 
+  getStoriesPaginated(currentPage: number): Observable<Story[]> {
+    return this.http.get( this.storiesUrl + '/mountain/getallstories/page/' + currentPage)
+      .map(this.extractStories)
+      .catch(this.handleError);
+  }
+
   getAllStories():  Observable<Story[]> {
 
     return this.http.get(this.storiesUrl + '/mountain/getallstories')

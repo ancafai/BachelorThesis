@@ -27,7 +27,6 @@ public class MountainsApplication {
 
 	}
 
-
 	@Bean
 	CommandLineRunner runner(MountainService mountainService) {
 		return args -> {

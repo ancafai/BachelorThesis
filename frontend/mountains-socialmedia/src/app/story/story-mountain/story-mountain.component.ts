@@ -26,6 +26,9 @@ export class StoryMountainComponent implements OnInit {
 
   }
 
+  prelucrateImage(image: string): string {
+    return 'data:image/jpg;base64,' + image;
+  }
 
   getStoriesMountain(mountainId: string): void {
 
@@ -40,7 +43,7 @@ export class StoryMountainComponent implements OnInit {
 
 
   truncateDescription(descr: string): string {
-    return descr.slice(0, 200);
+    return descr.slice(0, 275);
   }
 
 

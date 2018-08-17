@@ -7,58 +7,64 @@
         <div class="col-md-12">
         <h1 class="title text-center">Stories</h1>
         <div class="row mt-5">
+          <div *ngIf="stories != undefined">
             <h6 class="text-center" *ngIf="stories.length == 0"> There are no stories yet for this mountain</h6>
             <div *ngFor="let story of stories;let i = index">
               <div class="row collections" *ngIf="i%4===0">
                 <div class="col-md-3">
                   <div class="card" style="height: 32rem;">
-                    <img class="card-img-top" src="assets/img/bg1.jpg" alt="Card image cap">
+                    <img class="card-img-top" *ngIf="stories[i].pictures != null" src="{{prelucrateImage(stories[i].pictures[0])}}" alt="Card image cap">
+                    <img class="card-img-top" *ngIf="stories[i].pictures == null" src="assets/img/default.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">{{stories[i].title}}</h5>
-                      <p class="card-text" *ngIf="stories[i].text != null &&  stories[i].text.length >= 200">  {{truncateDescription(stories[i].text)}} ... </p>
-                      <p class="card-text" *ngIf="stories[i].text != null &&  stories[i].text.length < 200">  {{stories[i].text}}  </p>
-                      <button class="btn btn-primary btn-round btn-read" (click)="goToViewStory(stories[i].id)">Read more</button>
+                      <p class="card-text" *ngIf="stories[i].text != null &&  stories[i].text.length >= 275">  {{truncateDescription(stories[i].text)}} ... </p>
+                      <p class="card-text" *ngIf="stories[i].text != null &&  stories[i].text.length < 275">  {{stories[i].text}}  </p>
+                      <button class="btn btn-primary btn-round btn-read" (click)="goToViewStory(stories[i].id)">See full story</button>
                     </div>
                   </div>
                 </div>
                 <div *ngIf="stories[i + 1]" class="col-md-3">
                   <div class="card" style="height: 32rem;">
-                    <img class="card-img-top" src="assets/img/bg1.jpg" alt="Card image cap">
+                    <img class="card-img-top" *ngIf="stories[i+1].pictures != null" src="{{prelucrateImage(stories[i+1].pictures[0])}}" alt="Card image cap">
+                    <img class="card-img-top" *ngIf="stories[i+1].pictures == null" src="assets/img/default.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">{{stories[i+1].title}}</h5>
 
-                      <p class="card-text" *ngIf="stories[i+1].text != null &&  stories[i+1].text.length >= 200">  {{truncateDescription(stories[i+1].text)}} ... </p>
-                      <p class="card-text" *ngIf="stories[i+1].text != null &&  stories[i+1].text.length < 200">  {{stories[i+1].text}} </p>
-                      <button href="#" class="btn btn-primary btn-round btn-read" (click)="goToViewStory(stories[i+1].id)">Read more</button>
+                      <p class="card-text" *ngIf="stories[i+1].text != null &&  stories[i+1].text.length >= 275">  {{truncateDescription(stories[i+1].text)}} ... </p>
+                      <p class="card-text" *ngIf="stories[i+1].text != null &&  stories[i+1].text.length < 275">  {{stories[i+1].text}} </p>
+                      <button href="#" class="btn btn-primary btn-round btn-read" (click)="goToViewStory(stories[i+1].id)">See full story</button>
                     </div>
                   </div>
                 </div>
                 <div *ngIf="stories[i + 2]" class="col-md-3">
                   <div class="card" style="height: 32rem;">
-                    <img class="card-img-top" src="assets/img/bg1.jpg" alt="Card image cap">
+                    <img class="card-img-top" *ngIf="stories[i+2].pictures != null" src="{{prelucrateImage(stories[i+2].pictures[0])}}" alt="Card image cap">
+                    <img class="card-img-top" *ngIf="stories[i+2].pictures == null" src="assets/img/default.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">{{stories[i+2].title}}</h5>
 
-                      <p class="card-text" *ngIf="stories[i+2].text != null &&  stories[i+2].text.length >= 200">  {{truncateDescription(stories[i+2].text)}} ... </p>
-                      <p class="card-text" *ngIf="stories[i+2].text != null &&  stories[i+2].text.length < 200">  {{stories[i+2].text}} </p>
-                      <button class="btn btn-primary btn-round btn-read" (click)="goToViewStory(stories[i+2].id)">Read more</button>
+                      <p class="card-text" *ngIf="stories[i+2].text != null &&  stories[i+2].text.length >= 275">  {{truncateDescription(stories[i+2].text)}} ... </p>
+                      <p class="card-text" *ngIf="stories[i+2].text != null &&  stories[i+2].text.length < 275">  {{stories[i+2].text}} </p>
+                      <button class="btn btn-primary btn-round btn-read" (click)="goToViewStory(stories[i+2].id)">See full story</button>
                     </div>
                   </div>
                 </div>
                 <div *ngIf="stories[i + 3]" class="col-md-3">
                   <div class="card" style="height: 32rem;">
-                    <img class="card-img-top" src="assets/img/bg1.jpg" alt="Card image cap">
+                    <img class="card-img-top" *ngIf="stories[i+3].pictures != null" src="{{prelucrateImage(stories[i+3].pictures[0])}}" alt="Card image cap">
+                    <img class="card-img-top" *ngIf="stories[i+3].pictures == null" src="assets/img/default.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">{{stories[i+3].title}}</h5>
 
-                      <p class="card-text" *ngIf="stories[i+3].text != null &&  stories[i+3].text.length >= 200">  {{truncateDescription(stories[i+3].text)}} ... </p>
-                      <p class="card-text" *ngIf="stories[i+3].text != null &&  stories[i+3].text.length < 200">  {{stories[i+3].text}} </p>
-                      <button class="btn btn-primary btn-round btn-read" (click)="goToViewStory(stories[i+3].id)">Read more</button>
+                      <p class="card-text" *ngIf="stories[i+3].text != null &&  stories[i+3].text.length >= 275">  {{truncateDescription(stories[i+3].text)}} ... </p>
+                      <p class="card-text" *ngIf="stories[i+3].text != null &&  stories[i+3].text.length < 275">  {{stories[i+3].text}} </p>
+                      <button class="btn btn-primary btn-round btn-read" (click)="goToViewStory(stories[i+3].id)">See full story</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>

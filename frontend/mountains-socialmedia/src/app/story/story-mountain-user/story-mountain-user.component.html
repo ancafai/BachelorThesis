@@ -8,6 +8,8 @@
           <h1 class="title text-center">Stories</h1>
           <div class="row mt-5">
             <div class="col-md-12 ml-auto mr-auto">
+              <div *ngIf="stories != undefined">
+              <h6 class="text-center" *ngIf="stories.length == 0"> There are no stories yet for this mountain</h6>
               <div *ngFor="let story of stories">
                 <div class="row collections">
                   <div class="col-md-12">
@@ -24,6 +26,7 @@
 
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>

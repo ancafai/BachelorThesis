@@ -2,6 +2,10 @@
   width: auto;
 }
 
+.card-img-top {
+  height: 40%;
+}
+
 .row-map{
   background-color: rgba(255,255,255,0.94);
   padding: 10px 32px;

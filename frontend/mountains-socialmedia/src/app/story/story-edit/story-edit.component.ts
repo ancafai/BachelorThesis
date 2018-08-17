@@ -59,6 +59,7 @@ export class StoryEditComponent implements OnInit {
             .subscribe(
               data => {
                 console.log(data);
+                this.goBack();
               },
               error => console.log(error)
             );
@@ -73,12 +74,13 @@ export class StoryEditComponent implements OnInit {
         .subscribe(
           data => {
             console.log(data);
+            this.goBack();
           },
           error => console.log(error)
         );
     }
 
-    this.goBack();
+
   }
 
   goBack() {

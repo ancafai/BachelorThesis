@@ -12,10 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class MountainServiceImplementation implements MountainService {
@@ -249,5 +246,29 @@ public class MountainServiceImplementation implements MountainService {
             }
         }
         return null;
+    }
+
+
+
+    public List<StoryDto> getPager(int currentPage, int pageSize) {
+
+        List<StoryDto> allStories= this.findAllStories();
+        for (int i = 0; i < allStories.size(); i++) {
+            for (int j = 0; j < allStories.size(); j++) {
+                if (allStories.get(i).getTitle().compareTo(allStories.get(j).getTitle()) < 0) {
+                    StoryDto aux = allStories.get(i);
+                    allStories.set(i, allStories.get(j));
+                    allStories.set(j, aux);
+                }
+            }
+        }
+
+        // calculate start and end item indexes
+        int startIndex = (currentPage - 1) * pageSize;
+        int endIndex = Math.min(startIndex + pageSize, allStories.size());
+
+        List<StoryDto> listSliced = allStories.subList(startIndex, endIndex);
+        return listSliced;
+
     }
 }

@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
             }
           );
         console.log('local storage is: ' + localStorage.getItem('username'));
-        this.router.navigateByUrl('/user/profile');
+        this.router.navigateByUrl('/mountain/getall');
       } else {
         alert('Data not valid');
       }

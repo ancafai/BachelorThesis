@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+
+
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MountainService} from '../shared/mountain.service';
 import {Observable} from 'rxjs/Observable';
@@ -15,6 +17,7 @@ declare var require: any;
 const defaultCoords: number[] = [40, -80];
 const defaultZoom = 8;
 
+
 @Component({
   selector: 'app-mountain-home',
   templateUrl: './mountain-home.component.html',
@@ -27,26 +30,43 @@ export class MountainHomeComponent implements OnInit {
   mountain = 'Map';
   stories: Story[];
   username: string;
+  pagedStories: Story[];
+  pages = [];
+  currentPage: number;
 
   constructor(private mountainService: MountainService, private storyService: StoryService, private router: Router) { }
 
   ngOnInit() {
-
-    this.plotMap();
     this.getStories();
+    this.getStoriesPaginated(1);
+    this.plotMap();
+  }
+
+
+  getStoriesPaginated(currentPage: number): void {
+    this.storyService.getStoriesPaginated(currentPage)
+      .subscribe(
+        storiesFound => {
+          this.pagedStories = storiesFound;
+          this.currentPage = currentPage;
+        }
+      );
   }
 
   getStories(): void {
     this.storyService.getAllStories()
-            .subscribe(
-              storiesFound => {
-                this.stories = storiesFound;
-              }
-            );
+      .subscribe(
+        storiesFound => {
+          this.stories = storiesFound;
+          for (let i = 1; i <= Math.ceil(storiesFound.length / 12); i++) {
+            this.pages.push(i);
+          }
+        }
+      );
   }
 
   truncateDescription(descr: string): string {
-    return descr.slice(0, 310);
+    return descr.slice(0, 375);
   }
 
   prelucrateImage(image: string): string {
@@ -108,14 +128,14 @@ export class MountainHomeComponent implements OnInit {
 
       const mountainFound: Observable<Mountain> = this.mountainService.findByName(e.layer.feature.properties.DENUMIRE);
       mountainFound.subscribe( mountain => {
-          if (e.layer.options.color === '#2f1e1e') {
-            e.layer.setStyle({weight: 2, opacity: 0.5, fillOpacity: 0.5, color: 'red'});
-         //   console.log(e.layer);
-           this.mountain = e.layer.feature.properties.DENUMIRE;
-          } else {
-            e.layer.setStyle({weight: 2, opacity: 0.5, fillOpacity: 0.5, color: '#2f1e1e'});
-            this.mountain = 'Map';
-          }
+        if (e.layer.options.color === '#2f1e1e') {
+          e.layer.setStyle({weight: 2, opacity: 0.5, fillOpacity: 0.5, color: 'red'});
+          //   console.log(e.layer);
+          this.mountain = e.layer.feature.properties.DENUMIRE;
+        } else {
+          e.layer.setStyle({weight: 2, opacity: 0.5, fillOpacity: 0.5, color: '#2f1e1e'});
+          this.mountain = 'Map';
+        }
       });
     };
 
@@ -127,4 +147,4 @@ export class MountainHomeComponent implements OnInit {
 
 
   }
-  }
+}
