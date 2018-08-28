@@ -154,9 +154,20 @@ public class MountainController {
 
     }
 
+    @RequestMapping (value = "getmountainbystoryid/{storyId}", method = RequestMethod.GET)
+    public MountainDto getMountainByStoryId(@PathVariable String storyId) {
+        return mountainService.getMountainByStoryId(storyId);
+    }
+
     @RequestMapping (value = "getallstories/page/{currentPage}", method = RequestMethod.GET)
     public StoryDtoList getPageStories(@PathVariable int currentPage) {
-        StoryDtoList storyDtoList = new StoryDtoList( mountainService.getPager(currentPage, 12));
+        StoryDtoList storyDtoList = new StoryDtoList( mountainService.getPagerAllMountains(currentPage, 12));
+        return storyDtoList;
+    }
+
+    @RequestMapping (value = "getallstoriesmountain/{mountainId}/page/{currentPage}", method = RequestMethod.GET)
+    public StoryDtoList getPageMountainStories(@PathVariable String mountainId, @PathVariable int currentPage) {
+        StoryDtoList storyDtoList = new StoryDtoList( mountainService.getPagerStoriesMountains(mountainId, currentPage, 12));
         return storyDtoList;
     }
 

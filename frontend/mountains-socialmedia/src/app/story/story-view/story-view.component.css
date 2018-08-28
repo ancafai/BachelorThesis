@@ -1,7 +1,18 @@
 .flex-column {
+  margin-left: 5px;
+  margin-right: 10px;
   max-width : 360px;
 }
 
 img {
   margin: 5px;
+  cursor: zoom-in;
+}
+
+
+p {
+  white-space: pre-line;
+  font-size: 130%;
+  font-family: Tahoma, Geneva, sans-serif;
+  text-align: left;
 }

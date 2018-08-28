@@ -27,7 +27,7 @@ const defaultZoom = 8;
 
 export class MountainHomeComponent implements OnInit {
 
-  mountain = 'Map';
+  mountain = 'To climb or not to climb';
   stories: Story[];
   username: string;
   pagedStories: Story[];
@@ -134,7 +134,7 @@ export class MountainHomeComponent implements OnInit {
           this.mountain = e.layer.feature.properties.DENUMIRE;
         } else {
           e.layer.setStyle({weight: 2, opacity: 0.5, fillOpacity: 0.5, color: '#2f1e1e'});
-          this.mountain = 'Map';
+          this.mountain = 'To climb or not to climb';
         }
       });
     };

@@ -45,39 +45,44 @@ export class StoryEditComponent implements OnInit {
 
   editStory() {
 
-    if (this.fileList != null && this.fileList !== undefined) {
-      const formData: FormData = new FormData();
-      for (let i = 0; i < this.fileList.length; i++) {
+    if (this.story.title === '') {
+      alert('Please choose a name for the story!');
+    }
+    else {
+      if (this.fileList != null && this.fileList !== undefined) {
+        const formData: FormData = new FormData();
+        for (let i = 0; i < this.fileList.length; i++) {
           const fileInput: File = this.fileList[i];
           formData.append('files', fileInput, fileInput.name);
-      }
-      this.story.pictures = null;
-      formData.append('story', new Blob([JSON.stringify(this.story)], {
-            type: 'application/json'
-      }));
-          this.storyService.updateStoryWithFile('/mountain/updatestory', formData)
-            .subscribe(
-              data => {
-                console.log(data);
-                this.goBack();
-              },
-              error => console.log(error)
-            );
+        }
+        this.story.pictures = null;
+        formData.append('story', new Blob([JSON.stringify(this.story)], {
+          type: 'application/json'
+        }));
+        this.storyService.updateStoryWithFile('/mountain/updatestory', formData)
+          .subscribe(
+            data => {
+              console.log(data);
+              this.goBack();
+            },
+            error => console.log(error)
+          );
 
-      }  else {
-      const formData: FormData = new FormData();
-      this.story.pictures = null;
-      formData.append('story', new Blob([JSON.stringify(this.story)], {
-        type: 'application/json'
-      }));
-      this.storyService.updateStoryWithFile('/mountain/updatestorynoimage', formData)
-        .subscribe(
-          data => {
-            console.log(data);
-            this.goBack();
-          },
-          error => console.log(error)
-        );
+      } else {
+        const formData: FormData = new FormData();
+        this.story.pictures = null;
+        formData.append('story', new Blob([JSON.stringify(this.story)], {
+          type: 'application/json'
+        }));
+        this.storyService.updateStoryWithFile('/mountain/updatestorynoimage', formData)
+          .subscribe(
+            data => {
+              console.log(data);
+              this.goBack();
+            },
+            error => console.log(error)
+          );
+      }
     }
 
 

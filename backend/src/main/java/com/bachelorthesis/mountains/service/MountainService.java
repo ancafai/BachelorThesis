@@ -40,7 +40,12 @@ public interface MountainService {
 
     StoryDto getStoryById(String storyId);
 
-    List<StoryDto> getPager(int currentPage, int pageSize);
+    MountainDto getMountainByStoryId(String storyId);
+
+    List<StoryDto> getPagerAllMountains(int currentPage, int pageSize);
+
+    List<StoryDto> getPagerStoriesMountains(String mountainId, int currentPage, int pageSize);
+
 
 
 }

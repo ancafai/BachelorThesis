@@ -181,13 +181,16 @@ public class MountainServiceImplementation implements MountainService {
     public MountainDto addStory(String mountainId, NewStoryDto newStoryDto) {
         Mountain mountainAddStory = mountainRepository.findById(mountainId).get();
 
-        User userUpdateScore = userRepository.findById(newStoryDto.getUserId()).get();
-        userUpdateScore.setPoints(userUpdateScore.getPoints() + 10);
-        userService.update(userMapper.toExternal(userUpdateScore));
+        if (newStoryDto.getTitle() != EMPTY_STRING && newStoryDto.getTitle() != null && mountainId != EMPTY_STRING && mountainId != null) {
+            User userUpdateScore = userRepository.findById(newStoryDto.getUserId()).get();
+            userUpdateScore.setPoints(userUpdateScore.getPoints() + 10);
+            userService.update(userMapper.toExternal(userUpdateScore));
 
-        mountainAddStory.addStory(newStoryMapper.toInternal(newStoryDto));
-        Mountain mountainUpdated = mountainRepository.save(mountainAddStory);
-        return mountainMapper.toExternal(mountainUpdated);
+            mountainAddStory.addStory(newStoryMapper.toInternal(newStoryDto));
+            Mountain mountainUpdated = mountainRepository.save(mountainAddStory);
+            return mountainMapper.toExternal(mountainUpdated);
+        }
+        return null;
     }
 
 
@@ -248,9 +251,22 @@ public class MountainServiceImplementation implements MountainService {
         return null;
     }
 
+    @Override
+    public MountainDto getMountainByStoryId(String storyId) {
+
+        Set<MountainDto> allMountains = this.findAll();
+        for (MountainDto m : allMountains) {
+            for (Story st: m.getStories()) {
+                if (st.getId().equals(storyId))
+                    return m;
+            }
+        }
+        return null;
+    }
 
 
-    public List<StoryDto> getPager(int currentPage, int pageSize) {
+
+    public List<StoryDto> getPagerAllMountains(int currentPage, int pageSize) {
 
         List<StoryDto> allStories= this.findAllStories();
         for (int i = 0; i < allStories.size(); i++) {
@@ -268,6 +284,27 @@ public class MountainServiceImplementation implements MountainService {
         int endIndex = Math.min(startIndex + pageSize, allStories.size());
 
         List<StoryDto> listSliced = allStories.subList(startIndex, endIndex);
+        return listSliced;
+
+    }
+
+    public List<StoryDto> getPagerStoriesMountains(String mountainId, int currentPage, int pageSize) {
+
+        List<StoryDto> storiesMountain= this.findStoriesMountain(mountainId);
+        for (int i = 0; i < storiesMountain.size(); i++) {
+            for (int j = 0; j < storiesMountain.size(); j++) {
+                if (storiesMountain.get(i).getTitle().compareTo(storiesMountain.get(j).getTitle()) < 0) {
+                    StoryDto aux = storiesMountain.get(i);
+                    storiesMountain.set(i, storiesMountain.get(j));
+                    storiesMountain.set(j, aux);
+                }
+            }
+        }
+        // calculate start and end item indexes
+        int startIndex = (currentPage - 1) * pageSize;
+        int endIndex = Math.min(startIndex + pageSize, storiesMountain.size());
+
+        List<StoryDto> listSliced = storiesMountain.subList(startIndex, endIndex);
         return listSliced;
 
     }

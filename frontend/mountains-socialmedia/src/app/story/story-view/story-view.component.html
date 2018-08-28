@@ -3,28 +3,35 @@
 
     <div class="row">
       <div class="col-md-12 mt-5">
-        <h4 class="title text-center">{{story.title}}</h4>
-        <h6 class="text-center"> written by <a href="/user/profile/{{story.userId}}" class="link"> {{userFound}}  </a> </h6>
-        <div class="row mt-5 ml-5">
-            <div class="ml-auto mr-auto text-center"> {{story.text}}</div>
+        <h2 class="title display-4 text-primary text-center">{{story.title}}</h2>
+        <h5 class="text-center"> written by <a href="/user/profile/{{story.userId}}" class="link"> {{userFound}}  </a> </h5>
+        <div class="row mt-5">
+          <p class="ml-auto mr-auto">{{story.text}}</p>
         <hr> <hr>
         </div>
       </div>
     </div>
 
-    <div *ngFor="let pic of photos; let i = index">
-      <div class="row collections" *ngIf="i%3===0 && photos != null">
-      <div class="d-flex flex-column ">
-        <img src="{{photos[i]}}" class="img-fluid">
-      </div>
-      <div *ngIf="photos[i + 1]" class="d-flex flex-column ">
-        <img src="{{photos[i+1]}}" class="img-fluid">
-      </div>
-      <div *ngIf="photos[i + 2]" class="d-flex flex-column">
-        <img src="{{photos[i+2]}}" class="img-fluid">
-      </div>
+   <div class="row">
+     <div class="column flex-column">
+       <div *ngFor="let pic of photos; let i = index">
+        <img  *ngIf="i%3 == 0 && photos != null" src="{{photos[i]}}" class="img-fluid">
       </div>
     </div>
+     <div class="column  flex-column">
+       <div *ngFor="let pic of photos; let i = index">
+         <img  *ngIf="i%3 == 1 && photos != null" src="{{photos[i]}}" class="img-fluid">
+       </div>
+     </div>
+     <div class="column  flex-column">
+       <div *ngFor="let pic of photos; let i = index">
+         <img  *ngIf="i%3 == 2 && photos != null" src="{{photos[i]}}" class="img-fluid">
+       </div>
+     </div>
+
+   </div>
 
   </div>
 </div>
+
+

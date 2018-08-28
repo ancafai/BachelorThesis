@@ -28,7 +28,6 @@ import { ProfileEditComponent } from './profile/profile-edit/profile-edit.compon
 import { StoryMountainUserComponent } from './story/story-mountain-user/story-mountain-user.component';
 import { MountainProfileVisitorComponent } from './mountain/mountain-profile-visitor/mountain-profile-visitor.component';
 
-
 const appRoutes: Routes = [
   {
     path: 'user/profile/:userId',

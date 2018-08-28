@@ -26,11 +26,19 @@ export class StoryAddComponent implements OnInit {
 
   createStory() {
 
-    this.story.userId = localStorage.getItem('userId');
-    this.storyService.createStory('/mountain/addstory/' + this.idMountain, this.story)
-      .subscribe(data => {
-        this.router.navigateByUrl('/user/profile/' + localStorage.getItem('userId'));
-      });
+    if (this.story.title === '') {
+      alert('Please choose a name for the story!');
+    }
+    else if (this.idMountain === undefined) {
+      alert('Please select a mountain!');
+    }
+   else {
+      this.story.userId = localStorage.getItem('userId');
+      this.storyService.createStory('/mountain/addstory/' + this.idMountain, this.story)
+        .subscribe(data => {
+          this.router.navigateByUrl('/user/profile/' + localStorage.getItem('userId'));
+        });
+    }
   }
 
   getMountains(): void {

@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Story} from "../shared/story.model";
 import {StoryService} from "../shared/story.service";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../profile/shared/user.service";
+
+
 
 @Component({
   selector: 'app-story-view',
   templateUrl: './story-view.component.html',
   styleUrls: ['./story-view.component.css']
 })
+
+
 export class StoryViewComponent implements OnInit {
 
   story: Story = new Story('', '', '', '', '', null, null, null);
@@ -16,6 +20,8 @@ export class StoryViewComponent implements OnInit {
   photos: Array<string> = new Array<string>();
 
   constructor(private activatedRoute: ActivatedRoute, private storyService: StoryService, private userService: UserService) { }
+
+
 
   ngOnInit() {
     this.getById();
