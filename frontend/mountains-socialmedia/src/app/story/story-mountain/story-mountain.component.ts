@@ -60,7 +60,7 @@ export class StoryMountainComponent implements OnInit {
 
 
   truncateDescription(descr: string): string {
-    return descr.slice(0, 275);
+    return descr.slice(0, 390);
   }
 
 

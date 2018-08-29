@@ -4,6 +4,7 @@ import {NewStory} from '../shared/newStory.model';
 import {StoryService} from "../shared/story.service";
 import {Story} from "../shared/story.model";
 import {MountainService} from "../../mountain/shared/mountain.service";
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-story-edit',
@@ -17,7 +18,7 @@ export class StoryEditComponent implements OnInit {
   fileList: FileList;
   @ViewChild('myFile') myInputVariable: ElementRef;
 
-  constructor( private activatedRoute: ActivatedRoute, private router: Router, private storyService: StoryService, private mountainService: MountainService) { }
+  constructor( private _location: Location, private activatedRoute: ActivatedRoute, private router: Router, private storyService: StoryService, private mountainService: MountainService) { }
 
   ngOnInit() {
 
@@ -47,8 +48,7 @@ export class StoryEditComponent implements OnInit {
 
     if (this.story.title === '') {
       alert('Please choose a name for the story!');
-    }
-    else {
+    } else {
       if (this.fileList != null && this.fileList !== undefined) {
         const formData: FormData = new FormData();
         for (let i = 0; i < this.fileList.length; i++) {
@@ -89,7 +89,8 @@ export class StoryEditComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigateByUrl('/user/profile/' + localStorage.getItem('userId'));
+    //this.router.navigateByUrl('/user/profile/' + localStorage.getItem('userId'));
+    this._location.back();
   }
 
   deletePhoto() {

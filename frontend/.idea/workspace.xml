@@ -14,14 +14,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mountain-home.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-home/mountain-home.component.ts">
+      <file leaf-file-name="mountain-profile-owner.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-              <folding>
-                <marker date="1535391292605" expanded="true" signature="2332:2338" ph="©" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -29,21 +27,29 @@
       <file leaf-file-name="mountain-home.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-home/mountain-home.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-935">
-              <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+            <state relative-caret-position="34">
+              <caret line="2" column="117" lean-forward="false" selection-start-line="2" selection-start-column="117" selection-end-line="2" selection-end-column="117" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="story-mountain.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="story-mountain.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain/story-mountain.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="22" column="108" lean-forward="false" selection-start-line="22" selection-start-column="108" selection-end-line="22" selection-end-column="108" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="27" column="59" lean-forward="true" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="story.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/shared/story.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="87">
+              <caret line="45" column="73" lean-forward="true" selection-start-line="45" selection-start-column="73" selection-end-line="45" selection-end-column="73" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,19 +57,49 @@
       <file leaf-file-name="story-mountain.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain/story-mountain.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="969">
+              <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="story.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/shared/story.service.ts">
+      <file leaf-file-name="profile-edit.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-edit/profile-edit.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="65" column="70" lean-forward="false" selection-start-line="65" selection-start-column="70" selection-end-line="65" selection-end-column="70" />
+            <state relative-caret-position="1003">
+              <caret line="65" column="19" lean-forward="false" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-view/profile.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="47" column="88" lean-forward="false" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mountain-profile-owner.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+              <folding>
+                <marker date="1535560690345" expanded="true" signature="2522:2528" ph="©" />
+                <marker date="1535560690345" expanded="true" signature="2992:2998" ph="©" />
+                <marker date="1535560690345" expanded="true" signature="3420:3426" ph="©" />
+                <marker date="1535560690345" expanded="true" signature="3847:3853" ph="©" />
+                <marker date="1535560690345" expanded="true" signature="4273:4279" ph="©" />
+                <marker date="1535560690345" expanded="true" signature="4703:4709" ph="©" />
+                <marker date="1535560690345" expanded="true" signature="5130:5136" ph="©" />
+                <marker date="1535560690345" expanded="true" signature="5557:5563" ph="©" />
+                <marker date="1535560690345" expanded="true" signature="5989:5995" ph="©" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,9 +108,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>color</find>
-      <find>hr</find>
-      <find>add</find>
       <find>storyedi</find>
       <find>place</find>
       <find>gotoed</find>
@@ -98,22 +131,18 @@
       <find>read</find>
       <find>read mo</find>
       <find>hamm</find>
-      <find>image</find>
       <find>awes</find>
       <find>imag</find>
       <find>page</find>
+      <find>image</find>
+      <find>pho</find>
+      <find>isow</find>
+      <find>update</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-edit/profile-edit.component.css" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain-user/story-mountain-user.component.ts" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-edit/profile-edit.component.html" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/profile/shared/user.model.ts" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-add/story-add.component.html" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/shared/story.model.ts" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-edit/profile-edit.component.ts" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain.component.ts" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/shared/navbar.component.ts" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/profile/shared/user.service.ts" />
@@ -121,24 +150,12 @@
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile/mountain-profile.component.ts" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile.component.ts" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/shared/navbar.component.html" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-visitor/mountain-profile-visitor.component.html" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.html" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/login/login.component.ts" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-visitor/mountain-profile-visitor.component.css" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-view/profile.component.ts" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.ts" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-visitor/mountain-profile-visitor.component.ts" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/shared/pagination/PagerService.ts" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/shared/pagination/pager.service.ts" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-view/profile.component.css" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/register/register.component.ts" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain-user/story-mountain-user.component.html" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-edit/story-edit.component.html" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-add/story-add.component.ts" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-edit/story-edit.component.ts" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-view/profile.component.html" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-home/mountain-home.component.css" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-home/mountain-home.component.html" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-home/mountain-home.component.ts" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain/story-mountain.component.css" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-view/story-view.component.css" />
@@ -146,18 +163,37 @@
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/register/register.component.html" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-view/story-view.component.html" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/main.ts" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/package-lock.json" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/.angular-cli.json" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/index.html" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-view/story-view.component.ts" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/package.json" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/shared/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/login/login.component.html" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/index.html" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-edit/story-edit.component.css" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-edit/story-edit.component.html" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/.angular-cli.json" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/package.json" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-add/story-add.component.html" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-add/story-add.component.css" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/login/login.component.ts" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/register/register.component.ts" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.css" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-edit/story-edit.component.ts" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-visitor/mountain-profile-visitor.component.ts" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-visitor/mountain-profile-visitor.component.html" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-view/profile.component.ts" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain-user/story-mountain-user.component.css" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain-user/story-mountain-user.component.html" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain-user/story-mountain-user.component.ts" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.html" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.ts" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-home/mountain-home.component.html" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-edit/profile-edit.component.ts" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-view/profile.component.html" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain/story-mountain.component.ts" />
-        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/shared/story.service.ts" />
         <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain/story-mountain.component.html" />
+        <option value="$PROJECT_DIR$/mountains-socialmedia/src/app/story/shared/story.service.ts" />
       </list>
     </option>
   </component>
@@ -191,8 +227,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,14 +260,6 @@
               <item name="mountains-socialmedia" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="mountains-socialmedia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="mountain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -241,7 +269,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="mountain" type="462c0819:PsiDirectoryNode" />
-              <item name="mountain-home" type="462c0819:PsiDirectoryNode" />
+              <item name="mountain-profile-visitor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -249,7 +277,7 @@
               <item name="mountains-socialmedia" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -257,8 +285,17 @@
               <item name="mountains-socialmedia" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="navbar" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+              <item name="profile-edit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="mountains-socialmedia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+              <item name="profile-view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -291,7 +328,9 @@
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="mountains-socialmedia" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="environments" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="story" type="462c0819:PsiDirectoryNode" />
+              <item name="story-mountain-user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -302,7 +341,7 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/now-ui-kit-angular-v1.0.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -366,12 +405,14 @@
       <workItem from="1534503823405" duration="6039000" />
       <workItem from="1534512517120" duration="12132000" />
       <workItem from="1534747115312" duration="1768000" />
-      <workItem from="1535360255799" duration="28646000" />
+      <workItem from="1535360255799" duration="28668000" />
+      <workItem from="1535464929781" duration="22630000" />
+      <workItem from="1535575429379" duration="318000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="452224000" />
+    <option name="totallyTimeSpent" value="475194000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -380,11 +421,11 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22474378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38510302" sideWeight="0.42825767" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22979398" sideWeight="0.43484625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38510302" sideWeight="0.5717423" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22979398" sideWeight="0.5651537" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3169572" sideWeight="0.48682284" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -404,53 +445,16 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="257" />
+      <option name="time" value="258" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain.component.html" />
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/shared/user.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-edit/profile-edit.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain.component.ts" />
     <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/shared/mountain.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39">
           <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-edit/profile-edit.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-visitor/mountain-profile-visitor.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -462,95 +466,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/shared/pagination/pager.service.ts" />
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/shared/user.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/login/login.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/register/register.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain-user/story-mountain-user.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="35" column="3" lean-forward="false" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-add/story-add.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-view/profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="100" column="60" lean-forward="true" selection-start-line="100" selection-start-column="60" selection-end-line="100" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-visitor/mountain-profile-visitor.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="108" column="83" lean-forward="false" selection-start-line="108" selection-start-column="83" selection-end-line="108" selection-end-column="83" />
-          <folding>
-            <marker date="1532950432854" expanded="true" signature="2042:2048" ph="©" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="203" column="4" lean-forward="false" selection-start-line="203" selection-start-column="4" selection-end-line="220" selection-end-column="6" />
-          <folding>
-            <marker date="1532950415006" expanded="true" signature="2418:2424" ph="©" />
-            <marker date="1532950415006" expanded="true" signature="2888:2894" ph="©" />
-            <marker date="1532950415006" expanded="true" signature="3316:3322" ph="©" />
-            <marker date="1532950415006" expanded="true" signature="3743:3749" ph="©" />
-            <marker date="1532950415006" expanded="true" signature="4169:4175" ph="©" />
-            <marker date="1532950415006" expanded="true" signature="4599:4605" ph="©" />
-            <marker date="1532950415006" expanded="true" signature="5026:5032" ph="©" />
-            <marker date="1532950415006" expanded="true" signature="5453:5459" ph="©" />
-            <marker date="1532950415006" expanded="true" signature="5885:5891" ph="©" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-edit/story-edit.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-add/story-add.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -559,61 +474,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain-user/story-mountain-user.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-view/profile.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-595">
-          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain-user/story-mountain-user.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-view/profile.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-edit/story-edit.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="85" column="5" lean-forward="false" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-home/mountain-home.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain/story-mountain.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -621,15 +485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/register/register.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="72" lean-forward="false" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -637,7 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,17 +499,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="57" lean-forward="false" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#47#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -663,52 +506,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1225">
-          <caret line="5591" column="32" lean-forward="false" selection-start-line="5591" selection-start-column="32" selection-end-line="5591" selection-end-column="32" />
-          <folding>
-            <marker date="1535448094864" expanded="true" signature="333277:333283" ph="{&quot;version&quot;: &quot;1.0.1&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="94" lean-forward="false" selection-start-line="9" selection-start-column="94" selection-end-line="9" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/image-modal.directive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/.angular-cli.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/image-modal.directive.ts" />
     <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-view/story-view.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -719,21 +520,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="112" column="36" lean-forward="false" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/shared/navbar/navbar.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
           <caret line="23" column="3" lean-forward="false" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -741,7 +531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -749,7 +538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -757,61 +545,280 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/login/login.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+        <state relative-caret-position="34">
+          <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="58" lean-forward="false" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="243" column="16" lean-forward="false" selection-start-line="243" selection-start-column="9" selection-end-line="243" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/.angular-cli.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-edit/story-edit.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="14" column="67" lean-forward="false" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-edit/story-edit.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-add/story-add.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="79" lean-forward="false" selection-start-line="14" selection-start-column="79" selection-end-line="14" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-add/story-add.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-edit/profile-edit.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="39" column="50" lean-forward="true" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/register/register.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="72" lean-forward="false" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/shared/user.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/register/register.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-edit/story-edit.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1173">
+          <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="e#0#71#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-home/mountain-home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-935">
-          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/shared/story.service.ts">
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-view/profile.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="65" column="70" lean-forward="false" selection-start-line="65" selection-start-column="70" selection-end-line="65" selection-end-column="70" />
-          <folding />
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-home/mountain-home.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        <state relative-caret-position="427">
+          <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
           <folding>
             <marker date="1535391292605" expanded="true" signature="2332:2338" ph="©" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-visitor/mountain-profile-visitor.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="38" column="3" lean-forward="false" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="3" />
+          <folding>
+            <marker date="1535559392828" expanded="true" signature="2022:2028" ph="©" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-visitor/mountain-profile-visitor.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-view/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="85" column="3" lean-forward="false" selection-start-line="85" selection-start-column="3" selection-end-line="85" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain/story-mountain.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain-user/story-mountain-user.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain-user/story-mountain-user.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="98" lean-forward="false" selection-start-line="21" selection-start-column="98" selection-end-line="21" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain-user/story-mountain-user.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="35" column="31" lean-forward="false" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="31" lean-forward="false" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-profile-owner/mountain-profile-owner.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+          <folding>
+            <marker date="1535560690345" expanded="true" signature="2522:2528" ph="©" />
+            <marker date="1535560690345" expanded="true" signature="2992:2998" ph="©" />
+            <marker date="1535560690345" expanded="true" signature="3420:3426" ph="©" />
+            <marker date="1535560690345" expanded="true" signature="3847:3853" ph="©" />
+            <marker date="1535560690345" expanded="true" signature="4273:4279" ph="©" />
+            <marker date="1535560690345" expanded="true" signature="4703:4709" ph="©" />
+            <marker date="1535560690345" expanded="true" signature="5130:5136" ph="©" />
+            <marker date="1535560690345" expanded="true" signature="5557:5563" ph="©" />
+            <marker date="1535560690345" expanded="true" signature="5989:5995" ph="©" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/mountain/mountain-home/mountain-home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="117" lean-forward="false" selection-start-line="2" selection-start-column="117" selection-end-line="2" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-edit/profile-edit.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="65" column="19" lean-forward="false" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/profile/profile-view/profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="88" lean-forward="false" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain/story-mountain.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="969">
+          <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/story-mountain/story-mountain.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="22" column="108" lean-forward="false" selection-start-line="22" selection-start-column="108" selection-end-line="22" selection-end-column="108" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="27" column="59" lean-forward="true" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountains-socialmedia/src/app/story/shared/story.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="45" column="73" lean-forward="true" selection-start-line="45" selection-start-column="73" selection-end-line="45" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>

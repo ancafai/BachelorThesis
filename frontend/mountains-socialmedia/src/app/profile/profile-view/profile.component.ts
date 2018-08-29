@@ -79,9 +79,9 @@ export class ProfileComponent implements OnInit {
     }
   goToMap() {
     if (this.isOwner(this.user.id)) {
-      this.router.navigateByUrl('/mountain/getalluserowner/' + this.user.id);
+      this.router.navigateByUrl('/mountain/getmapuserowner/' + this.user.id);
     } else {
-      this.router.navigateByUrl('mountain/getalluservisitor/' + this.user.id + '/' + this.user.mapType);
+      this.router.navigateByUrl('mountain/getmapuservisitor/' + this.user.id + '/' + this.user.mapType);
     }
   }
 

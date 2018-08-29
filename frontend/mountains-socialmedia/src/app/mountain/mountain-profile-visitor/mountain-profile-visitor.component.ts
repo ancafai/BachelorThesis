@@ -29,7 +29,6 @@ export class MountainProfileVisitorComponent implements OnInit {
   mapType = 'streets';
   colorRegion: string;
   user: User = new User();
-  isOwner: boolean;
   constructor(private activatedRoute: ActivatedRoute, private mountainService: MountainService, private userService: UserService, private storyService: StoryService, private router: Router) { }
 
 

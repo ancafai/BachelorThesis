@@ -28,6 +28,7 @@ import { ProfileEditComponent } from './profile/profile-edit/profile-edit.compon
 import { StoryMountainUserComponent } from './story/story-mountain-user/story-mountain-user.component';
 import { MountainProfileVisitorComponent } from './mountain/mountain-profile-visitor/mountain-profile-visitor.component';
 
+
 const appRoutes: Routes = [
   {
     path: 'user/profile/:userId',
@@ -40,12 +41,12 @@ const appRoutes: Routes = [
     data: { title: 'Mountains List' }
   },
   {
-    path: 'mountain/getalluserowner/:userId',
+    path: 'mountain/getmapuserowner/:userId',
     component: MountainProfileOwnerComponent,
     data: { title: 'Mountains List' }
   },
   {
-    path: 'mountain/getalluservisitor/:userId/:mapType',
+    path: 'mountain/getmapuservisitor/:userId/:mapType',
     component: MountainProfileVisitorComponent,
     data: { title: 'Mountains List' }
   },

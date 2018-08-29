@@ -102,12 +102,15 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public boolean register(NewUserDto newUserDto){
-        if(userRepository.findByUsername(newUserDto.getUsername()) != null){
-            return false;
-        }else{
+    public String register(NewUserDto newUserDto){
+        if(newUserDto.getUsername() == "" || newUserDto.getPassword() == "" || newUserDto.getMail() == "" || newUserDto.getFirstName() == "" || newUserDto.getLastName() == ""){
+            return "fields empty";
+        }
+        else if (userRepository.findByUsername(newUserDto.getUsername()) != null){
+                return "username not good";
+        } else {
             userRepository.save(newUserMapper.toInternal(newUserDto));
-            return true;
+            return "GOOD";
         }
     }
 

@@ -36,11 +36,12 @@ export class ProfileEditComponent implements OnInit {
 
   deletePhoto() {
     this.myInputVariable.nativeElement.value = '';
+    this.user.profilePicture = '';
   }
 
   editUser() {
 
-    if (this.fileList != null) {
+    if (this.fileList != null && this.fileList !== undefined) {
       const formData: FormData = new FormData();
       const file: File = this.fileList[0];
       formData.append('file', file, file.name);
@@ -51,6 +52,7 @@ export class ProfileEditComponent implements OnInit {
         .subscribe(
           data => {
             console.log(data);
+            this.goBack();
           },
           error => console.log(error)
         );
@@ -63,12 +65,12 @@ export class ProfileEditComponent implements OnInit {
         .subscribe(
           data => {
             console.log(data);
+            this.goBack();
           },
           error => console.log(error)
           );
        }
 
-    this.goBack();
   }
 
 
@@ -80,7 +82,7 @@ export class ProfileEditComponent implements OnInit {
       */
 
   goBack() {
-    this.router.navigateByUrl('/user/profile');
+    this.router.navigateByUrl('/user/profile/' + localStorage.getItem('userId'));
   }
 
   fileChange(e) {

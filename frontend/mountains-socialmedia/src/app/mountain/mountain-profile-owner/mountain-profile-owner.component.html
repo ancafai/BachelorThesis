@@ -1,8 +1,10 @@
 <div class="row row-map">
   <div class="col-md-9">
-    <h2 class="heading">Map</h2>
+    <br><br><br><br>
+    <h2 class="heading text-primary">Personal map</h2>
     <hr/>
 
+    <h4> Edit the style of your map</h4>
     <div id='menu'>
       <input id='streets' type='radio' name='rtoggle' value='streets'>
       <label for='streets'>streets</label>
@@ -20,7 +22,7 @@
       <label for='pirates'>pirates</label>
       <input id='high-contrast' type='radio' name='rtoggle' value='high-contrast'>
       <label for='high-contrast'>high-contrast</label>
-      <button (click)="updateMapType()" class="btn btn-primary btn-round float-right"> Save style</button>
+      <button (click)="updateMapType()" class="btn btn-primary btn-round ml-4"> Save style</button>
     </div>
     <hr/>
     <div id="map"></div>

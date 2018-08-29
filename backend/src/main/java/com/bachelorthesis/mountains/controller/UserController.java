@@ -61,10 +61,13 @@ public class UserController {
 
     @RequestMapping(value="register", method = RequestMethod.POST)
     public String register(@RequestBody NewUserDto newUserDto){
-        if(userService.register(newUserDto)){
+        if(userService.register(newUserDto).equals("GOOD")){
             return "GOOD";
-        }else{
-            return "username not available";
+        }else if (userService.register(newUserDto).equals("fields empty")){
+            return "fields empty";
+        }
+        else {
+            return "username not good";
         }
     }
 

@@ -29,6 +29,7 @@ export class MountainProfileOwnerComponent implements OnInit {
   mapType = 'streets';
   colorRegion: string;
   user: User = new User();
+
   constructor(private activatedRoute: ActivatedRoute, private mountainService: MountainService, private userService: UserService, private storyService: StoryService, private router: Router) { }
 
   ngOnInit() {
@@ -56,8 +57,10 @@ export class MountainProfileOwnerComponent implements OnInit {
         userFound.mapType = this.mapType;
         localStorage.setItem('mapType', this.mapType);
         this.userService.updateUser(userFound)
-          .subscribe( userUpdated =>
-            console.log('Maptype updated: ' + userUpdated.mapType)
+          .subscribe( userUpdated => {
+              console.log('Maptype updated: ' + userUpdated.mapType);
+              alert('Style of the map has been changed to ' + userUpdated.mapType);
+            }
           );
         }
       );
