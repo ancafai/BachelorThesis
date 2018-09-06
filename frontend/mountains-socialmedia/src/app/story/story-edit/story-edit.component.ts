@@ -89,7 +89,6 @@ export class StoryEditComponent implements OnInit {
   }
 
   goBack() {
-    //this.router.navigateByUrl('/user/profile/' + localStorage.getItem('userId'));
     this._location.back();
   }
 
