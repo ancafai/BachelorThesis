@@ -3,7 +3,7 @@ It consists of a reliable, responsive and easily scalable mountain climbing soci
 
 Technologies:
 
-Backend: Spring Boot, Gradle, MongoDB
+Backend: Spring Boot, Lombok, Gradle, MongoDB
 
-Frontend: Angular, Bootstrap
+Frontend: Angular 4, Bootstrap
 
